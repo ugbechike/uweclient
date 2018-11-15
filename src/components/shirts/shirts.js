@@ -23,11 +23,11 @@ export default class Shirts extends Component {
     return (
       <div>
       <Dropdown direction="right" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
-            <DropdownToggle caret style={{  boxShadow: '10px 10px 24px grey' , width: '20%', marginTop: '10px', backgroundColor: 'white'}}>
+            <DropdownToggle caret style={{  boxShadow: '10px 10px 24px grey' , width: '30%', marginTop: '10px', backgroundColor: 'white'}}>
                 <img style={{width: '30%'}} src={Shirt1} alt='shirt' />
                 <p style={{color: 'gray', margin:'0'}}> Plackets </p>
             </DropdownToggle>
-            <DropdownMenu style={{width: '60%'}}>
+            <DropdownMenu style={{width: '80%'}}>
                 <Row>
                 <Col xs="6">
             <DropdownItem >

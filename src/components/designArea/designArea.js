@@ -1,5 +1,5 @@
 import React from 'react';
-import Person from '../avatar/avatar';
+// import Person from '../avatar/avatar';
 import './designArea.css';
 
 const DesignArea = (props) => {

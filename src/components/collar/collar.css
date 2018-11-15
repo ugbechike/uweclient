@@ -1,7 +1,21 @@
-.collar_shadow{
-    box-shadow: 10px 10px 24px grey !important;
-}
 
-.collar_shadow:hover{
-    box-shadow: 10px 10px 4px grey;
-}
+
+    
+/* @media screen and (min-width: 320px) {
+    .query{
+        display: inline-flex;
+    }
+    
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+        display: inline-flex;
+    }
+    } */
+
+    .collar_shadow{
+        box-shadow: 10px 10px 24px grey !important;
+    }
+    
+    .collar_shadow:hover{
+        box-shadow: 10px 10px 4px grey;
+    }

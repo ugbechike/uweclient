@@ -3,6 +3,7 @@ import {Tooltip,  Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col
 import Collar1 from '../assets/collarButton.png'
 import Collar2 from '../assets/collarPlain.png'
 import Collar3 from '../assets/collarRev.png'
+import './collar.css';
 
 export default class Collar extends Component {
   constructor(props) {
@@ -24,13 +25,13 @@ export default class Collar extends Component {
 
   render() {
     return (
-      <div>
+      <div className='query' >
         <Dropdown direction="right"  isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
-            <DropdownToggle caret className='collar_shadow' style={{ boxShadow: '10px 10px 24px grey' , width: '20%', marginTop: '10px', backgroundColor: 'white' }}>
+            <DropdownToggle caret className='collar_shadow' style={{ boxShadow: '10px 10px 24px grey' , width: '30%', marginTop: '10px', backgroundColor: 'white' }}>
                 <img  style={{ width: '50%' }} src={Collar1} alt='collar' />
                 <p style={{color: 'gray', margin:'0'}}> Collar </p>
             </DropdownToggle>
-            <DropdownMenu style={{width: '60%'}}>
+            <DropdownMenu style={{width: '80%'}}>
             <Row>
                 <Col xs="6">
                 <DropdownItem >

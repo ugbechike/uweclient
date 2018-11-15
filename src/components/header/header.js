@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,} from 'reactstrap';
-  import { Link } from 'react-router-dom'
+  // import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -31,10 +31,12 @@ export default class Header extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto mr-auto"  navbar>
               <NavItem>
-                <Link to="/fabrics" style={{marginRight: '15px'}}>Fabrics</Link>
+                Join
+                {/* <Link to="/fabrics" style={{marginRight: '15px'}}>Fabrics</Link> */}
               </NavItem>
               <NavItem>
-                <Link to="/style">Styles</Link>
+                Style
+                {/* <Link to="/style">Styles</Link> */}
               </NavItem>
             </Nav>
           </Collapse>

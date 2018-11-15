@@ -39,7 +39,7 @@ export default class Styles extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Container>
         <Row>
           <Col xs="6">
