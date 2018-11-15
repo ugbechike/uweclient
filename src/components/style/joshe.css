@@ -1,0 +1,142 @@
+/* .App {
+    height: 100%;
+    display: flex;
+    color: rgba(189, 189, 192, 1);
+} */
+
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: #bebebe;
+    line-height: 6rem;
+    color: rgb(17, 14, 14);
+    opacity: 0.9;
+    padding: 0 20px;
+}
+
+section {
+    width: 30%;
+    height: 90vh;
+    overflow-x: hidden;
+    background-color: #f3f3f3;
+    color: rgb(17, 14, 14); 
+    overflow-y: scroll
+}
+
+main {
+    width: -webkit-fill-available;
+    height: 90vh;
+    float: left;
+    overflow-y: scroll
+}
+
+.overlay {
+    height: 100vh;
+    background-color: black;
+    width: 70%;
+    float: right;
+    position: static;
+    visibility: hidden
+}
+
+.card > div {
+    background-color: white;
+    height: 70px;
+    width: 70px;
+    border: 1px solid darkgrey;
+}
+
+
+.card {
+    padding: 7px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+cursor: pointer;
+}
+
+
+.card:hover {
+    background-color: darkgrey;
+    color: white
+}
+
+.card > p {
+margin-left: 30px;
+line-height: 40px
+}
+
+.reveal {
+    background-color: darkgrey;
+    width: 23vw;
+    margin-left: -16.8vw;
+    height: 90vh;
+    position: absolute;
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 70px;
+        margin: auto;
+        padding-top: 17px;
+        display: block;
+        /* overflow: hidden; */
+    }
+
+    .card > p {
+        /* visibility: hidden;
+        display: none */
+        text-align: center;
+        font-size: 0.8em;
+        margin: 0;
+        margin-top: -10px
+    }
+
+    .card > div {
+        margin: auto;
+        height: 50px;
+        width: 50px
+    }
+
+    section {
+        display: flex;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        height: 15vh;
+    }
+    header {
+        position: fixed;
+    }
+.reveal {
+    background-color: darkgrey;
+    width: 100%;
+    /* margin-left: -16.8vw; */
+    height: 40vh;
+    margin-left: 0;
+    position: absolute;
+    bottom: 15vh;
+}
+}
+
+/*  Scrool bar styles */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #555; 
+    border-radius: 3px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
