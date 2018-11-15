@@ -5,8 +5,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,} from 'reactstrap';
+  NavItem,} from 'reactstrap';
   import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
@@ -26,13 +25,13 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="d-flex justify-content-center"  color="dark" dark expand="md">
           <NavbarBrand href="/">Uwe</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto mr-auto"  navbar>
               <NavItem>
-                <Link to="/fabrics">Fabrics</Link>
+                <Link to="/fabrics" style={{marginRight: '15px'}}>Fabrics</Link>
               </NavItem>
               <NavItem>
                 <Link to="/style">Styles</Link>

@@ -1,0 +1,7 @@
+.collar_shadow{
+    box-shadow: 10px 10px 24px grey !important;
+}
+
+.collar_shadow:hover{
+    box-shadow: 10px 10px 4px grey;
+}
