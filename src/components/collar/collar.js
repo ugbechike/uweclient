@@ -14,7 +14,7 @@ export default function Collar(props) {
                   <img className='collar_image_side'  src={Collar2} alt='collar' />
                   <p className='tooltiptext'>Plain collar</p>
             </div>
-            <div onClick={() => props.changeCollar(<img className='collar_image' src={Collar3} alt='collar' />)}>
+            <div onClick={() => props.changeCollar(<img className='collar_image3' src={Collar3} alt='collar' />)}>
                   <img className='collar_image_side' src={Collar3} alt='collar' />
                   <p className='tooltiptext'>Rev collar</p>
             </div>

@@ -7,6 +7,8 @@ import Shirt from '../shirt/shirt';
 import Shirt1 from '../assets/shirtYesBtn.png';
 import Sleeves from '../sleeves/sleeves';
 import LongSleeve from '../assets/longSleeves.png';
+import CollarIcon from '../assets/collar-icon.png';
+import Shirts from '../assets/Short.png'
 
 
 export default class Joshe extends Component {
@@ -16,8 +18,8 @@ export default class Joshe extends Component {
         revealShirt: false,
         revealSleeves: false,
         collarImg:  <img style={{width: '55%'}} src={Collar1} alt='collar' />,
-        shirtImg: <img style={{width: '55%'}} src={Shirt1} alt='shirt'/>,
-        sleevesImg: <img style={{width: '55%'}} src={LongSleeve} alt='sleeves' />,
+        shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt'/>,
+        sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
     }
 
     //HANDLE COLLAR CHANGE
@@ -74,21 +76,23 @@ export default class Joshe extends Component {
                     <section>
                         <div className='card' onClick={this.handleDisplayCollar}>
                             <div>
-                                
+                                <img className='collarIcon' src={CollarIcon} alt=''/>
                             </div>
-                            <p> Collars </p>
+                            <p className='details'> Collars </p>
                         </div>
                         <div className='card' onClick={this.handleDisplayShirt}>
-                            <div></div>
-                            <p> Shirts </p>
+                            <div>
+                                <img className='shirtIcon' src={Shirts} alt="" />
+                            </div>
+                            <p className='details'> Shirts </p>
                         </div>
                         <div className='card' onClick={this.handleDisplaySleeves}>
                             <div></div>
-                            <p> Sleeves </p>
+                            <p className='details'> Sleeves </p>
                         </div>
                         <div className='card' onClick={this.handleDisplay}>
                             <div></div>
-                            <p> Cuffs </p>
+                            <p className='details'> Cuffs </p>
                         </div>
 
                     </section>
