@@ -41,12 +41,24 @@ export default class Joshe extends Component {
                         {
                             reveal &&
                             <div className='reveal' >
+                                <div className='revealBox'>
+                                    <div> </div>
+                                    <p> Material Name <i className='fa fa-close'></i></p>
+                                </div>
+                                <div className='revealBox'>
+                                    <div> </div>
+                                    <p> Material Name <i className='fa fa-close'></i></p>
+                                </div>
+                                <div className='revealBox'>
+                                    <div> </div>
+                                    <p> Material Name <i className='fa fa-close'></i></p>
+                                </div>
                             </div>
                         }
 
-                    <div>
-                    
-                    </div>
+                        <div>
+                            {/* image for designArea goes here */}
+                        </div>
 
                     </main>
                 </div>
