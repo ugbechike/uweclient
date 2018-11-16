@@ -9,9 +9,10 @@ import Sleeves from '../sleeves/sleeves';
 import LongSleeve from '../assets/longSleeves.png';
 import CollarIcon from '../assets/collar-icon.png';
 import Shirts from '../assets/Short.png';
-import Long from '../assets/Long.PNG';
+import Long from '../assets/Long.png';
 import Cuff from '../cuff/cuff';
 import Cuffs from '../assets/cuff.PNG';
+import AnkaraFabrics from '../assets/ankara1.PNG'
 
 
 export default class Joshe extends Component {
@@ -36,10 +37,7 @@ export default class Joshe extends Component {
         this.setState({
             collarImg,
 
-<<<<<<< HEAD
             
-=======
->>>>>>> 1fc318846ddb8ef15dd499539433bc989a7e591c
             hideClothes: !this.state.hideClothes,
             cuffImg: this.state.hideClothes
         })
@@ -143,8 +141,9 @@ export default class Joshe extends Component {
                             fab &&
                             <div className='card'>
                                 <div>
+                                    <img style={{width: '100%', height:'70px'}} src={AnkaraFabrics} alt = ''/>
                                 </div>
-                                <p className='details'> White </p>
+                                <p className='details'> Ankara </p>
                             </div>
 
                         }
