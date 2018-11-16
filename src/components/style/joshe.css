@@ -93,6 +93,15 @@ line-height: 40px
     margin-top: 6.8px;
 }
 
+.semi_header {
+    text-align: center;
+    height: auto;
+    background-color: rgb(241, 226, 226);
+    color: black;
+    word-spacing: 50px;
+    padding: 10px
+}
+
 .collar_image_side{
     width: 70%;
     cursor: pointer;
