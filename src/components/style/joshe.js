@@ -8,7 +8,10 @@ import Shirt1 from '../assets/shirtYesBtn.png';
 import Sleeves from '../sleeves/sleeves';
 import LongSleeve from '../assets/longSleeves.png';
 import CollarIcon from '../assets/collar-icon.png';
-import Shirts from '../assets/Short.png'
+import Shirts from '../assets/Short.png';
+import Long from '../assets/Long.png';
+import Cuff from '../cuff/cuff';
+import Cuffs from '../assets/cuff.PNG'
 
 
 export default class Joshe extends Component {
@@ -17,6 +20,9 @@ export default class Joshe extends Component {
         revealCollar: false,
         revealShirt: false,
         revealSleeves: false,
+        revealCuff: false,
+        hideClothes: false,
+        showAll: true,
         collarImg:  <img style={{width: '55%'}} src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt'/>,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
@@ -24,17 +30,37 @@ export default class Joshe extends Component {
 
     //HANDLE COLLAR CHANGE
     changeCollar = (collarImg) => {
-        this.setState({collarImg, 
+        this.setState({
+            collarImg,
+            
+            hideClothes: !this.state.hideClothes,
+            cuffImg: this.state.hideClothes
         })
     }
     //HANDLE CHANGE OF SHIRTS
     changeShirt = (shirtImg) => {
         this.setState({shirtImg, 
+           
         })
     }
 
     changeSleeves = (sleevesImg) => {
         this.setState({sleevesImg, 
+           
+            
+        })
+        
+    }
+
+    //HANDLE CUFFS
+    changeCuff = (cuffImg) => {
+        this.setState({
+            cuffImg,
+             hideClothes: !this.state.hideClothes,
+            shirtImg: this.state.hideClothes,
+            sleevesImg: this.state.hideClothes,
+            collarImg: this.state.hideClothes,
+            revealCuff: false,
         })
     }
 
@@ -43,7 +69,8 @@ export default class Joshe extends Component {
         this.setState({
             revealCollar: !this.state.revealCollar,
             revealSleeves: false,
-            revealShirt: false
+            revealShirt: false,
+            revealCuff: false,
         })
     }
 
@@ -52,7 +79,8 @@ export default class Joshe extends Component {
         this.setState({
             revealShirt: !this.state.revealShirt,
             revealCollar: false,
-            revealSleeves: false
+            revealSleeves: false,
+            revealCuff: false,
 
         })
     }
@@ -62,16 +90,26 @@ export default class Joshe extends Component {
         this.setState({
             revealSleeves: !this.state.revealSleeves,
             revealShirt: false,
+            revealCollar: false,
+        })
+    }
+
+     //HANDLE CUFF
+     handleDisplayCuff = (e) => {
+        this.setState({
+            revealCuff: !this.state.revealCuff,
+            revealSleeves: false,
+            revealShirt: false,
             revealCollar: false
         })
     }
     
 
     render() {
-        const { revealCollar, revealShirt, revealSleeves } = this.state
+        const { revealCollar, revealShirt, revealSleeves, revealCuff } = this.state
         return (
             <div className='App'>
-                <header> theHouseOfUwe  </header>
+                <header> Uwe  </header>
                 <div style={{ display: 'flex' }}>
                     <section>
                         <div className='card' onClick={this.handleDisplayCollar}>
@@ -84,14 +122,18 @@ export default class Joshe extends Component {
                             <div>
                                 <img className='shirtIcon' src={Shirts} alt="" />
                             </div>
-                            <p className='details'> Shirts </p>
+                            <p className='details'> Placket  </p>
                         </div>
                         <div className='card' onClick={this.handleDisplaySleeves}>
-                            <div></div>
+                            <div>
+                            <img className='shirtIcon' src={Long} alt="" />
+                            </div>
                             <p className='details'> Sleeves </p>
                         </div>
-                        <div className='card' onClick={this.handleDisplay}>
-                            <div></div>
+                        <div className='card' onClick={this.handleDisplayCuff}>
+                            <div>
+                            <img className='shirtIcon' src={Cuffs} alt="" />
+                            </div>
                             <p className='details'> Cuffs </p>
                         </div>
 
@@ -119,8 +161,15 @@ export default class Joshe extends Component {
                             </div>
                         }
 
+                        {
+                            revealCuff &&
+                            <div className='reveal' >
+                                <Cuff changeCuff = {this.changeCuff} />
+                            </div>
+                        }
+
                     <div>
-                        <DesignArea  collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} />
+                        <DesignArea  collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
                     </div>
 
                     </main>
