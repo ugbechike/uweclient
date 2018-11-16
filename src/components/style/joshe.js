@@ -26,12 +26,14 @@ export default class Joshe extends Component {
         collarImg:  <img style={{width: '55%'}} src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt'/>,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
+        activeTab: '1',
     }
 
     //HANDLE COLLAR CHANGE
-    changeCollar = (collarImg) => {
+    changeCollar = (collarImg, shirtImg) => {
         this.setState({
             collarImg,
+
             
             hideClothes: !this.state.hideClothes,
             cuffImg: this.state.hideClothes
