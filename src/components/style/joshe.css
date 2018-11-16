@@ -1,0 +1,430 @@
+/* .App {
+    height: 100%;
+    display: flex;
+    color: rgba(189, 189, 192, 1);
+} */
+
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: #007b7e;
+    line-height: 6rem;
+    color: rgb(17, 14, 14);
+    opacity: 0.9;
+    padding: 0 20px;
+}
+
+section {
+    width: 30%;
+    height: 90vh;
+    overflow-x: hidden;
+    background-color: #f3f3f3;
+    color: rgb(17, 14, 14); 
+    overflow-y: scroll
+}
+
+main {
+    width: -webkit-fill-available;
+    height: 90vh;
+    float: left;
+    overflow-y: scroll
+}
+
+.overlay {
+    height: 100vh;
+    background-color: black;
+    width: 70%;
+    float: right;
+    position: static;
+    visibility: hidden;
+    
+}
+
+.card > div {
+    background-color: white;
+    height: 70px;
+    width: 70px;
+    border: 1px solid darkgrey;
+}
+
+
+.card {
+    padding: 7px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+cursor: pointer;
+}
+
+
+.card:hover {
+    background-color: darkgrey;
+    color: white
+}
+
+.card > p {
+margin-left: 30px;
+line-height: 40px
+}
+
+.reveal {
+    background-color: darkgrey;
+    width: 23vw;
+    margin-left: -16.8vw;
+    height: 90vh;
+    position: absolute;
+    padding: 10px;
+}
+
+.collar_design{
+    position: absolute;
+    left: 754px;
+    margin-top: 72px;
+    z-index: 5;
+}
+
+.collar_image{
+    width: 55%;
+}
+
+.collar_image3{
+    width: 55%;
+    margin-left: 3px;
+    margin-top: 6.8px;
+}
+
+.collar_image_side{
+    width: 70%;
+    cursor: pointer;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
+.collar_image_side:hover{
+    box-shadow: 2px 2px 1px;
+}
+.collar_container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.shirt-side{
+    width: 50%;
+    cursor: pointer;
+    outline: 1px solid;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
+.shirt_design{
+    position: absolute;
+    left: 680px;
+    margin-top: 100px;
+}
+
+.shirt_image{
+    width: 55%;
+}
+
+.shirt_image1{
+    width: 56%;
+    margin-left: 1px;
+    position: relative;
+    bottom: 5px;
+}
+
+
+.shirt-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.sleeves_design{
+    position: absolute;
+    left: 643px;
+    margin-top: 137px;
+}
+
+.sleeves_image{
+    width: 53.8%;
+}
+
+.sleeves_image1{
+    width: 54%;
+    margin-top: -2px;
+    /* margin-bottom: -8px */
+    position: relative;
+    left: 5px;
+}
+
+.cuff_image1{
+    width: 14%;
+    margin-top: 80px;
+    /* margin-bottom: -8px */
+    position: relative;
+    left: 500px;
+}
+
+.cuff-side{
+    width: 70%;
+    cursor: pointer;
+    outline: 1px solid;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
+.cuff-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.sleeves-side{
+    width: 70%;
+    outline: 1px solid;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+.sleeves-side:hover{
+    box-shadow: 2px 2px 1px;
+}
+
+.shirt-side:hover{
+    box-shadow: 2px 2px 1px;
+}
+
+.shirt-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.collarIcon{
+    width: 70%;
+    margin: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
+
+}
+
+.details{
+    margin-top: 15px;
+}
+
+.shirtIcon{
+    height: 60px;
+    margin-left: 7px;
+}
+
+
+
+.collar_image_side .tooltiptext  {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: pink;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.collar_image_side:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 70px;
+        margin: auto;
+        padding-top: 17px;
+        display: block;
+        /* overflow: hidden; */
+    }
+
+    .card > p {
+        /* visibility: hidden;
+        display: none */
+        text-align: center;
+        font-size: 0.8em;
+        margin: 0;
+        margin-top: -10px
+    }
+
+    .card > div {
+        margin: auto;
+        height: 50px;
+        width: 50px
+    }
+
+    section {
+        display: flex;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        height: 15vh;
+    }
+    header {
+        position: fixed;
+    }
+.reveal {
+    background-color: darkgrey;
+    width: 100%;
+    /* margin-left: -16.8vw; */
+    height: 40vh;
+    margin-left: 0;
+    position: absolute;
+    bottom: 15vh;
+}
+
+
+.collar_design{
+    position: absolute;
+    left: 115px;
+    margin-top: 80px;
+    z-index: 5;
+}
+
+.collar_image{
+    width: 35%;
+}
+
+.collar_image3{
+    width: 55%;
+    margin-left: 3px;
+    margin-top: 6.8px;
+}
+
+.collar_image_side{
+    width: 70%;
+    cursor: pointer;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
+.collar_image_side:hover{
+    box-shadow: 2px 2px 1px;
+}
+.collar_container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.shirt-side{
+    width: 50%;
+    cursor: pointer;
+    outline: 1px solid;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
+.shirt_design{
+    position: absolute;
+    left: 80px;
+    margin-top: 100px;
+}
+
+.shirt_image{
+    width: 55%;
+}
+
+.shirt_image1{
+    width: 56%;
+    margin-left: 1px;
+    position: relative;
+    bottom: 5px;
+}
+
+
+.shirt-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.sleeves_design{
+    position: absolute;
+    left: 100px;
+    margin-top: 117px;
+}
+
+.sleeves_image{
+    width: 55.8%;
+}
+
+.sleeves_image1{
+    width: 54%;
+    margin-top: -2px;
+    /* margin-bottom: -8px */
+    position: relative;
+    left: 5px;
+}
+
+.sleeves-side{
+    width: 70%;
+    outline: 1px solid;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+.sleeves-side:hover{
+    box-shadow: 2px 2px 1px;
+}
+
+.shirt-side:hover{
+    box-shadow: 2px 2px 1px;
+}
+
+.shirt-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.collarIcon{
+    width: 70%;
+    margin: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
+
+}
+
+.details{
+    margin-top: 15px;
+}
+
+.shirtIcon{
+    height: 60px;
+    margin-left: 7px;
+}
+}
+
+/*  Scrool bar styles */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #555; 
+    border-radius: 3px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+
+    
+  }
+  
