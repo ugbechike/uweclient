@@ -227,6 +227,10 @@ line-height: 40px
     margin-left: 7px;
 }
 
+.toggle-button{
+    height: 150px;
+}
+
 
 
 .collar_image_side .tooltiptext  {

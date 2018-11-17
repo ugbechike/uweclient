@@ -24,12 +24,15 @@ export default class Joshe extends Component {
         revealCuff: false,
         hideClothes: false,
         showAll: true,
-        fab: true,
-        sty: false,
+        fab: false,
+        sty: true,
         collarImg: <img style={{ width: '55%' }} src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
         activeTab: '1',
+        frontView: true,
+        bacView: false,
+        btn: true,
     }
 
     //HANDLE COLLAR CHANGE
@@ -114,18 +117,39 @@ export default class Joshe extends Component {
     clickFabrics = () => {
         this.setState({
             fab: true,
-            sty: false
+            sty: false,
+            btn: false
         })
     }
 
     clickStyles = () => {
         this.setState({
             sty: true,
-            fab: false
+            fab: false,
+            btn: true
         })
     }
+
+    //TOGGLE VIEW
+    toggleViewFront = () => {
+        this.setState({
+            frontView: true,
+            bacView: false
+
+        })
+    }
+
+    toggleViewBack = () =>{
+        this.setState({
+            bacView: true,
+
+            frontView: false
+
+        })
+    }
+
     render() {
-        const { revealCollar, revealShirt, revealSleeves, revealCuff, fab, sty } = this.state
+        const { revealCollar, revealShirt, revealSleeves, revealCuff, fab, sty, bacView, frontView, btn } = this.state
         return (
             <div className='App'>
                 <header> Uwe  </header>
@@ -136,6 +160,9 @@ export default class Joshe extends Component {
                     </p>
                 </div>
                 <div style={{ display: 'flex' }}>
+                    {
+                        frontView &&
+
                     <section>
                         {
                             fab &&
@@ -147,7 +174,10 @@ export default class Joshe extends Component {
                             </div>
 
                         }
-
+                        {/* FRONT VIEW HERE */}
+                        
+                       
+                            
                         {
                             sty &&
                             <div>
@@ -169,18 +199,75 @@ export default class Joshe extends Component {
                                     </div>
                                     <p className='details'> Sleeves </p>
                                 </div>
-                                <div className='card' onClick={this.handleDisplayCuff}>
+                                {/* <div className='card' onClick={this.handleDisplayCuff}>
                                     <div>
                                         <img className='shirtIcon' src={Cuffs} alt="" />
                                     </div>
                                     <p className='details'> Cuffs </p>
-                                </div>
+                                </div> */}
 
                             </div>
                         }
 
                     </section>
-                    <main>
+                    }
+
+                    {/* BACK VIEW */}
+                    {
+                        bacView &&
+
+                    <section>
+                        {
+                            fab &&
+                            <div className='card'>
+                                <div>
+                                    <img style={{width: '100%', height:'70px'}} src={AnkaraFabrics} alt = ''/>
+                                </div>
+                                <p className='details'> Ankara </p>
+                            </div>
+
+                        }
+                        
+                       
+                            
+                        {
+                            sty &&
+                            <div>
+                                <div className='card' onClick={this.handleDisplayCollar}>
+                                    <div>
+                                        <img className='collarIcon' src={CollarIcon} alt='' />
+                                    </div>
+                                    <p className='details'> Black Collars </p>
+                                </div>
+                                <div className='card' onClick={this.handleDisplayShirt}>
+                                    <div>
+                                        <img className='shirtIcon' src={Shirts} alt="" />
+                                    </div>
+                                    <p className='details'>Black Placket  </p>
+                                </div>
+                                <div className='card' onClick={this.handleDisplaySleeves}>
+                                    <div>
+                                        <img className='shirtIcon' src={Long} alt="" />
+                                    </div>
+                                    <p className='details'>Black Sleeves </p>
+                                </div>
+                                {/* <div className='card' onClick={this.handleDisplayCuff}>
+                                    <div>
+                                        <img className='shirtIcon' src={Cuffs} alt="" />
+                                    </div>
+                                    <p className='details'> Cuffs </p>
+                                </div> */}
+
+                            </div>
+                        }
+
+                    </section>
+                    }
+
+
+                    {
+                        frontView &&
+                        <main>
 
                         {
                             revealCollar &&
@@ -216,9 +303,66 @@ export default class Joshe extends Component {
 
                     </main>
 
+                    }
 
+                    {/* BACK VIEW */}
+
+                    {
+                        bacView &&
+                        <main>
+
+                        {
+                            revealCollar &&
+                            <div className='reveal' >
+                                <Collar changeCollar={this.changeCollar} />
+                            </div>
+                        }
+
+                        {
+                            revealShirt &&
+                            <div className='reveal' >
+                                <Shirt changeShirt={this.changeShirt} />
+                            </div>
+                        }
+
+                        {
+                            revealSleeves &&
+                            <div className='reveal' >
+                                <Sleeves changeSleeves={this.changeSleeves} />
+                            </div>
+                        }
+
+                        {
+                            revealCuff &&
+                            <div className='reveal' >
+                                <Cuff changeCuff={this.changeCuff} />
+                            </div>
+                        }
+
+                        <div>
+                            <DesignArea collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
+                        </div>
+
+                        <span>i am bac view</span>
+
+                    </main>
+
+                    }
+                    {
+                        btn &&
+                        
+                        <div>
+                        <button onClick={this.toggleViewFront}>Front view</button>
+                        <button onClick={this.toggleViewBack}>Back view</button>
+                        </div>
+                    
+                    }
+
+                    {/*  */}
+                   
 
                 </div>
+
             </div>
         )
     }
