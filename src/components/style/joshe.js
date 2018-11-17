@@ -11,8 +11,11 @@ import CollarIcon from '../assets/collar-icon.png';
 import Shirts from '../assets/Short.png';
 import Long from '../assets/Long.png';
 import Cuff from '../cuff/cuff';
-import Cuffs from '../assets/cuff.PNG';
-import AnkaraFabrics from '../assets/ankara1.PNG'
+// import Cuffs from '../assets/cuff.PNG';
+import AnkaraFabrics from '../assets/ankara1.PNG';
+import backCollar from '../assets/backcollar.png';
+import BackDesignArea from '../designArea/backDesign';
+import BackCollar from '../collar/backCollar'
 
 
 export default class Joshe extends Component {
@@ -29,6 +32,7 @@ export default class Joshe extends Component {
         collarImg: <img style={{ width: '55%' }} src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
+        backcollarImg: <img className='sleeves_image1' src={backCollar} alt='sleeves' />,
         activeTab: '1',
         frontView: true,
         bacView: false,
@@ -45,6 +49,14 @@ export default class Joshe extends Component {
             cuffImg: this.state.hideClothes
         })
     }
+
+    //HANDLE BACK VIEW COLLAR
+    changeBackCollar = (backcollarImg) => {
+        this.setState({
+            backcollarImg
+        })
+    }
+
     //HANDLE CHANGE OF SHIRTS
     changeShirt = (shirtImg) => {
         this.setState({
@@ -62,17 +74,17 @@ export default class Joshe extends Component {
 
     }
 
-    //HANDLE CUFFS
-    changeCuff = (cuffImg) => {
-        this.setState({
-            cuffImg,
-            hideClothes: !this.state.hideClothes,
-            shirtImg: this.state.hideClothes,
-            sleevesImg: this.state.hideClothes,
-            collarImg: this.state.hideClothes,
-            revealCuff: false,
-        })
-    }
+    // //HANDLE CUFFS
+    // changeCuff = (cuffImg) => {
+    //     this.setState({
+    //         cuffImg,
+    //         hideClothes: !this.state.hideClothes,
+    //         shirtImg: this.state.hideClothes,
+    //         sleevesImg: this.state.hideClothes,
+    //         collarImg: this.state.hideClothes,
+    //         revealCuff: false,
+    //     })
+    // }
 
     //HANDLE COLLAR TOGGLE SIDEBAR
     handleDisplayCollar = (e) => {
@@ -160,6 +172,8 @@ export default class Joshe extends Component {
                     </p>
                 </div>
                 <div style={{ display: 'flex' }}>
+
+                    {/* FRONT VIEW OF SECTION STARTS */}
                     {
                         frontView &&
 
@@ -174,8 +188,6 @@ export default class Joshe extends Component {
                             </div>
 
                         }
-                        {/* FRONT VIEW HERE */}
-                        
                        
                             
                         {
@@ -211,8 +223,10 @@ export default class Joshe extends Component {
 
                     </section>
                     }
+                    {/* FRONT VIEW OF SECTION ENDS HERE */}
 
-                    {/* BACK VIEW */}
+
+                    {/* BACK VIEW FOR SECTION */}
                     {
                         bacView &&
 
@@ -237,9 +251,9 @@ export default class Joshe extends Component {
                                     <div>
                                         <img className='collarIcon' src={CollarIcon} alt='' />
                                     </div>
-                                    <p className='details'> Black Collars </p>
+                                    <p className='details'> Back Collars </p>
                                 </div>
-                                <div className='card' onClick={this.handleDisplayShirt}>
+                                {/* <div className='card' onClick={this.handleDisplayShirt}>
                                     <div>
                                         <img className='shirtIcon' src={Shirts} alt="" />
                                     </div>
@@ -250,7 +264,7 @@ export default class Joshe extends Component {
                                         <img className='shirtIcon' src={Long} alt="" />
                                     </div>
                                     <p className='details'>Black Sleeves </p>
-                                </div>
+                                </div> */}
                                 {/* <div className='card' onClick={this.handleDisplayCuff}>
                                     <div>
                                         <img className='shirtIcon' src={Cuffs} alt="" />
@@ -263,7 +277,10 @@ export default class Joshe extends Component {
 
                     </section>
                     }
+                    {/* BACK VIEW SECTION ENDS HERE */}
 
+
+                    {/* FRONT VIEW MAIN STARTS HERE */}
 
                     {
                         frontView &&
@@ -304,8 +321,10 @@ export default class Joshe extends Component {
                     </main>
 
                     }
+                    {/* FRONT VIEW FOR MAIN ENDS HERE */}
 
-                    {/* BACK VIEW */}
+
+                    {/* BACK VIEW FOR MAIN STARTS HERE */}
 
                     {
                         bacView &&
@@ -314,7 +333,7 @@ export default class Joshe extends Component {
                         {
                             revealCollar &&
                             <div className='reveal' >
-                                <Collar changeCollar={this.changeCollar} />
+                                <BackCollar changeBackCollar={this.changeBackCollar} />
                             </div>
                         }
 
@@ -340,14 +359,14 @@ export default class Joshe extends Component {
                         }
 
                         <div>
-                            <DesignArea collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
+                            <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
                         </div>
-
-                        <span>i am bac view</span>
 
                     </main>
 
                     }
+                        {/* BACK VIEW FOR MAIN ENDS HERE */}
+
                     {
                         btn &&
                         

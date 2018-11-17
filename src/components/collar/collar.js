@@ -4,7 +4,7 @@ import Collar2 from '../assets/collarPlain.png'
 import Collar3 from '../assets/collarRev.png'
 import BtnDown from '../assets/buttonDown.png'
 import Club from '../assets/club.png'
-import RevCollar from '../assets/revCollar.png'
+import RevCollar from '../assets/revCollar.png';
 
 export default function Collar(props) {
   return (

@@ -110,9 +110,22 @@ line-height: 40px
     box-shadow: 2px 5px 3px;
 }
 
+.back_image_side{
+    width: 40%;
+    cursor: pointer;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px;
+}
+
 .collar_image_side:hover{
     box-shadow: 2px 2px 1px;
 }
+
+.back_image_side:hover{
+    box-shadow: 2px 2px 1px;
+}
+
 .collar_container{
     display: grid;
     grid-template-columns: auto auto auto
