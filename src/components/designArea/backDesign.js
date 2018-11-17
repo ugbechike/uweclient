@@ -6,10 +6,10 @@ export default function BackDesignArea(props) {
         <div className='collar_design'>
             {props.backcollarImg}
         </div>
-        <div className='shirt_design'>
+        <div className='back_shirt_design'>
             {props.backshirtImg}
         </div>
-        <div className='sleeves_design'>
+        <div className='back_sleeves_design'>
             {props.backsleevesImg}
         </div>
     </div>

@@ -15,7 +15,11 @@ import Cuff from '../cuff/cuff';
 import AnkaraFabrics from '../assets/ankara1.PNG';
 import backCollar from '../assets/backcollar.png';
 import BackDesignArea from '../designArea/backDesign';
-import BackCollar from '../collar/backCollar'
+import BackCollar from '../collar/backCollar';
+import backShirt1 from '../assets/backinvertpleats.png';
+import BackShirt from '../shirt/backShirt';
+import BackLongSleeve from '../assets/backsleeve.png';
+import BackSleeves from '../sleeves/backSleeves';
 
 
 export default class Joshe extends Component {
@@ -32,7 +36,9 @@ export default class Joshe extends Component {
         collarImg: <img style={{ width: '55%' }} src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
-        backcollarImg: <img className='sleeves_image1' src={backCollar} alt='sleeves' />,
+        backcollarImg: <img style={{ width: '55%' }} src={backCollar} alt='sleeves' />,
+        backshirtImg: <img className='shirt_image1' src={backShirt1} alt='shirt' />,
+        backsleevesImg: <img className='sleeves_image1' src={BackLongSleeve} alt='sleeves' />,
         activeTab: '1',
         frontView: true,
         bacView: false,
@@ -54,6 +60,20 @@ export default class Joshe extends Component {
     changeBackCollar = (backcollarImg) => {
         this.setState({
             backcollarImg
+        })
+    }
+
+    // HANDLE BACK VIEW SLEEVES
+    changeBackSleeves = (backsleevesImg) => {
+        this.setState({
+            backsleevesImg
+        })
+    }
+
+    // HANDLE BACK VIEW SHIRT
+    changeBackShirt = (backshirtImg) => {
+        this.setState({
+            backshirtImg
         })
     }
 
@@ -253,18 +273,18 @@ export default class Joshe extends Component {
                                     </div>
                                     <p className='details'> Back Collars </p>
                                 </div>
-                                {/* <div className='card' onClick={this.handleDisplayShirt}>
+                                 <div className='card' onClick={this.handleDisplayShirt}>
                                     <div>
                                         <img className='shirtIcon' src={Shirts} alt="" />
                                     </div>
-                                    <p className='details'>Black Placket  </p>
+                                    <p className='details'>Back Placket  </p>
                                 </div>
                                 <div className='card' onClick={this.handleDisplaySleeves}>
                                     <div>
                                         <img className='shirtIcon' src={Long} alt="" />
                                     </div>
                                     <p className='details'>Black Sleeves </p>
-                                </div> */}
+                                </div>
                                 {/* <div className='card' onClick={this.handleDisplayCuff}>
                                     <div>
                                         <img className='shirtIcon' src={Cuffs} alt="" />
@@ -340,14 +360,14 @@ export default class Joshe extends Component {
                         {
                             revealShirt &&
                             <div className='reveal' >
-                                <Shirt changeShirt={this.changeShirt} />
+                                <BackShirt changeBackShirt={this.changeBackShirt} />
                             </div>
                         }
 
                         {
                             revealSleeves &&
                             <div className='reveal' >
-                                <Sleeves changeSleeves={this.changeSleeves} />
+                                <BackSleeves changeBackSleeves={this.changeBackSleeves} />
                             </div>
                         }
 
@@ -370,7 +390,7 @@ export default class Joshe extends Component {
                     {
                         btn &&
                         
-                        <div>
+                        <div className='toggle-btn'>
                         <button onClick={this.toggleViewFront}>Front view</button>
                         <button onClick={this.toggleViewBack}>Back view</button>
                         </div>

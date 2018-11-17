@@ -87,6 +87,13 @@ line-height: 40px
     width: 55%;
 }
 
+/* WHITE COLLAR STYLE */
+.white_collar_image3{
+    width: 70%;
+    margin-left: -123px;
+    margin-top: -14.8px;
+}
+
 .collar_image3{
     width: 55%;
     margin-left: 3px;
@@ -146,8 +153,24 @@ line-height: 40px
     margin-top: 100px;
 }
 
+.back_shirt_design{
+    position: absolute;
+    left: 680px;
+    margin-top: 100px;
+    z-index: 20
+}
+
 .shirt_image{
     width: 55%;
+}
+
+/* WHITE SHIRT DEMO */
+.white_shirt_image{
+    width: 56%;
+    margin-left: 1px;
+    position: relative;
+    bottom: 45px;
+    right: 50px;
 }
 
 .shirt_image1{
@@ -155,6 +178,10 @@ line-height: 40px
     margin-left: 1px;
     position: relative;
     bottom: 5px;
+}
+
+.back_shirt_image{
+    width: 55%;
 }
 
 
@@ -176,9 +203,24 @@ line-height: 40px
 .sleeves_image1{
     width: 54%;
     margin-top: -2px;
-    /* margin-bottom: -8px */
     position: relative;
     left: 5px;
+}
+
+/* WHITE SLEEVE STYLE DEMO */
+.white_sleeves_image{
+    width: 58.8%;
+    position: relative;
+    bottom: 75px;
+    right: 20px;
+}
+
+
+
+.back_sleeves_design{
+    position: absolute;
+    left: 653px;
+    margin-top: 147px;
 }
 
 .cuff_image1{
@@ -242,6 +284,15 @@ line-height: 40px
 
 .toggle-button{
     height: 150px;
+}
+
+.toggle-btn{
+    display: inherit;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    right: 475px;
+
 }
 
 

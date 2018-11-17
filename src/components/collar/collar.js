@@ -5,6 +5,7 @@ import Collar3 from '../assets/collarRev.png'
 import BtnDown from '../assets/buttonDown.png'
 import Club from '../assets/club.png'
 import RevCollar from '../assets/revCollar.png';
+import Collar4 from '../assets/whitecollar.png'
 
 export default function Collar(props) {
   return (
@@ -20,6 +21,10 @@ export default function Collar(props) {
             <div onClick={() => props.changeCollar(<img className='collar_image3' src={Collar3} alt='collar' />)}>
                   <img className='collar_image_side' src={RevCollar} alt='collar' />
                   <p className='tooltiptext'>Rev collar</p>
+            </div>
+            <div onClick={() => props.changeCollar(<img className='white_collar_image3' src={Collar4} alt='collar' />)}>
+                  <img className='collar_image_side' src={BtnDown} alt='collar' />
+                  <p className='tooltiptext'>White Button collar</p>
             </div>
     </div>
   )
