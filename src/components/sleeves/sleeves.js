@@ -1,7 +1,7 @@
 import React from 'react';
 import LongSleeve from '../assets/longSleeves.png';
 import ShortSleeve from '../assets/shortSleeves.png';
-import Long from '../assets/Long.png'
+import Long from '../assets/Long.PNG'
 import Shortg from '../assets/Short.png';
 import WhiteSleeve from '../assets/whitesleeve.png'
 

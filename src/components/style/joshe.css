@@ -330,6 +330,17 @@ line-height: 40px
 }
 
 
+.revealer {
+    margin-left: -16.8vw;
+    padding: 10px;
+    top: 7.2pc;
+    background-color: pink;
+    width: 23%;
+    height: 90vh;
+    position: absolute;
+    bottom: 15vh;
+}
+
 @media screen and (max-width: 500px) {
     .card {
         width: 70px;
