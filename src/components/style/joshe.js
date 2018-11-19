@@ -150,7 +150,11 @@ export default class Joshe extends Component {
         this.setState({
             fab: true,
             sty: false,
-            btn: false
+            btn: false,
+            revealCollar: false,
+            revealCuff: false,
+            revealShirt: false,
+            revealSleeves: false
         })
     }
 
