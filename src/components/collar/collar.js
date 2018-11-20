@@ -13,16 +13,16 @@ export default function Collar(props) {
             <div >
 
                   <img className='ankara-icon'  src={BtnDown} alt='collar' />
-                    <p className='tooltiptext'><strong>Button collar</strong></p>
+                    <p className='tooltiptext tooltiptext1'><strong>Button<br/> collar</strong></p>
             </div>
             </div>
             <div onClick={() => props.changeCollar(<img className='collar_image' src={Collar2} alt='collar' />)}>
                   <img className='ankara-icon'  src={Club} alt='collar' />
-                  <p className='tooltiptext'><strong>Plain <br/>collar</strong></p>
+                  <p className='tooltiptext tooltiptext1'><strong>Plain <br/>collar</strong></p>
             </div>
             <div onClick={() => props.changeCollar(<img className='collar_image3' src={Collar3} alt='collar' />)}>
                   <img className='ankara-icon' src={RevCollar} alt='collar' />
-                  <p className='tooltiptext'><strong>Rev <br/>collar</strong></p>
+                  <p className='tooltiptext tooltiptext1'><strong>Rev <br/>collar</strong></p>
             </div>
     </div>
   )

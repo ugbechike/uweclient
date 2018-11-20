@@ -39,7 +39,7 @@ export default class Joshe extends Component {
         showAll: true,
         fab: false,
         sty: true,
-        collarImg: <img style={{ width: '55%' }} src={Collar1} alt='collar' />,
+        collarImg: <img className="collar-display"  src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
         backcollarImg: <img style={{ width: '55%' }} src={backCollar} alt='sleeves' />,
@@ -113,7 +113,7 @@ export default class Joshe extends Component {
             resultCollar: true,
             AnkaraCollar: true,
             witeCollar: false,
-            collarImg: <img style={{ width: '55%' }} src={Collar1} alt='' />
+            collarImg: <img className='collar-display' src={Collar1} alt='' />
         });
     }
 
@@ -122,7 +122,7 @@ export default class Joshe extends Component {
             resultCollar: true,
             AnkaraCollar: false,
             witeCollar: true,
-            collarImg: <img style={{ width: '45%', marginLeft: '-4px', marginTop: '-3.8px' }} src={CollarW} alt='' />
+            collarImg: <img className="collar-displayW" src={CollarW} alt='' />
         });
     }
 
@@ -330,7 +330,7 @@ export default class Joshe extends Component {
 
                             {
                                 sty &&
-                                <div>
+                                <div className='mobile-section'>
 
                                     <div className='card' onClick={this.handleDisplayCollar}>
                                         <div>
@@ -427,7 +427,7 @@ export default class Joshe extends Component {
                             {
                                 (resultCollar) ?
                                     <div className='revealer'>
-                                        < p style={{fontSize: '20px'}} > <strong>Styles </strong> <i style={{ float: 'right', cursor: 'pointer', color: 'grey', fontSize: '25px' }} className='fa fa-arrow-left' onClick={this.handleCollarClose}></i> </p>
+                                        < p style={{fontSize: '20px'}} > <strong>Styles </strong> <i className='fa fa-arrow-left arrow-close' onClick={this.handleCollarClose}></i> </p>
                                        
                                        {
                                             AnkaraCollar ?
