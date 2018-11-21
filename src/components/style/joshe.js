@@ -10,7 +10,7 @@ import LongSleeve from '../assets/longSleeves.png';
 import CollarIcon from '../assets/collar-icon.png';
 import Shirts from '../assets/Short.png';
 import Long from '../assets/Long.PNG';
-import Cuff from '../cuff/cuff';
+// import Cuff from '../cuff/cuff';
 // import Cuffs from '../assets/cuff.PNG';
 import AnkaraFabrics from '../assets/ankara1.PNG';
 import backCollar from '../assets/backcollar.png';
