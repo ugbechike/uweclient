@@ -371,9 +371,9 @@ export default class Joshe extends Component {
                                             }
                                         </div> : null
                             }
-                            <div>
+                            <center>
                                 <DesignArea collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
-                            </div>
+                            </center>
 
                         </main>
 
