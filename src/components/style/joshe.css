@@ -47,6 +47,7 @@ main {
     height: 70px;
     width: 70px;
     border: 1px solid darkgrey;
+    overflow: hidden;
 }
 
 
@@ -56,12 +57,14 @@ main {
     display: flex;
     border-bottom: 1px solid darkgrey;
 cursor: pointer;
+transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
 
 .card:hover {
     background-color: darkgrey;
-    color: white
+    color: white;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
 .card > p {
@@ -76,27 +79,44 @@ line-height: 40px
     height: 90vh;
     position: absolute;
     padding: 10px;
-    border-left: 1px solid grey;
+    animation-name: slide-right;
+    animation-duration: 0.7s
 }
 
-.revealAll{
-    display: inline-flex;
+.reveal > div > div {
+    width: 30%;
 }
 
-.revealSleeve{
+.reveal > div {
     display: inline-flex;
-    width: 80%;
+    justify-content: space-around;
+    width: 100%
 }
 
 .collar_design{
-    position: absolute;
-    left: 754px;
-    margin-top: 72px;
-    z-index: 5;
+    position: sticky;
+    width: 23%;
+    margin-left: -0.9%;
+    z-index: 9;
+    margin-top: 5%;
+}
+
+
+main > center > div {
+    height: 70vh;
+    width: 81%;
+    background-color: transparent;
+    padding: 0;
+    /* border: 1px dotted darkgrey; */
+    padding-top: 3pc;
 }
 
 .collar_image{
     width: 55%;
+}
+
+.collar_image_side1 {
+    width: 30%
 }
 
 /* WHITE COLLAR STYLE */
@@ -118,50 +138,25 @@ line-height: 40px
     background-color: #b43937;
     color: white;
     word-spacing: 50px;
-    padding: 10px
+    padding: 10px;
 }
 
-.collar_image_side{
-    width: 58%;
+.collar_image_side, .collar_image_side2, .back_image_side{
+    width: 100%;
     cursor: pointer;
-    height: inherit;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
+    transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
-.ankara-icon{
-    width: 58%;
-    cursor: pointer;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-.collar_image_side1{
-    width: 20%;
-    cursor: pointer;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 2px 5px 1px;
-}
-
-.collar_image_side2{
-
-    width: 40%;
-    height: inherit;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-
-.back_image_side{
+/* .back_image_side{
     width: 40%;
     cursor: pointer;
     height: 70px;
     cursor: pointer;
     box-shadow: 2px 5px 3px;
-}
+} */
 
 .collar_image_side:hover{
-    box-shadow: 2px 2px 1px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
 .back_image_side:hover{
@@ -170,40 +165,49 @@ line-height: 40px
 
 .collar_container{
     display: grid;
-    grid-template-columns: auto auto auto
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    height: 70px;
+}
+
+.collar_container > div {
+width: 100%
+}
+
+
+.ankara-icon {
+    width: 100%;
+    height: 50px
+}
+
+.collar-display, .collar-displayW {
+    width: 51%
 }
 
 .shirt-side{
-    width: 50%;
+    width: 100%;
     cursor: pointer;
     height: 70px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-
-.shirt-sideW{
-    width: 30%;
-    cursor: pointer;
-    height: 70px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
+    transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
 .shirt_design{
-    position: absolute;
-    left: 680px;
-    margin-top: 100px;
+    /* position: relative; */
+    width: 44%;
+    margin-top: -5.9%
 }
 
 .back_shirt_design{
-    position: absolute;
-    left: 680px;
-    margin-top: 100px;
-    z-index: 20
+    width: 44%;
+    margin-top: -5.9%;
+    z-index: 200;
+    position: sticky;
 }
 
 .shirt_image{
-    width: 55%;
+    width: 63%;
+    margin-right: 6px;
+    margin-top: 1px
 }
 
 /* WHITE SHIRT DEMO */
@@ -216,16 +220,20 @@ line-height: 40px
 }
 
 .shirt_image1{
-    width: 56%;
-    margin-left: 1px;
-    position: relative;
-    bottom: 5px;
+    width: 64%;
+    margin-left: 2px;
 }
 
 .back_shirt_image{
-    width: 55%;
+    width: 64%;
+    margin-left: -5px;
+    margin-top: -4px;
 }
 
+.b_shirt_image1{
+    width: 61%;
+    margin-left: -5px;
+}
 
 .shirt-container{
     display: grid;
@@ -233,43 +241,45 @@ line-height: 40px
 }
 
 .sleeves_design{
-    position: absolute;
-    left: 643px;
-    margin-top: 137px;
+    position: sticky;
+    margin-top: -43%;
+    margin-left: -1%;
+    width: 66%;
 }
 
 .sleeves_image{
     width: 53.8%;
+    margin-top: 3px;
 }
 
 .sleeves_image1{
-    width: 54%;
+    width: 53%;
     margin-top: -2px;
-    position: relative;
-    left: 5px;
+    margin-right: 0px;
 }
 
 .white_sleeves_image{
-    width: 70.8%;
+    width: 71.5%;
     position: relative;
-    bottom: 95px;
-    right: 60px;
+    bottom: 90px;
+    right: 10px;
 }
 
 /* WHITE SLEEVE STYLE DEMO */
 .white_sleeves_image{
-    width: 70.8%;
+    width: 71.5%;
     position: relative;
-    bottom: 95px;
-    right: 60px;
+    bottom: 90px;
+    right: 10px;
 }
 
 
 
 .back_sleeves_design{
-    position: absolute;
-    left: 653px;
-    margin-top: 147px;
+    position: sticky;
+    margin-top: -39%;
+    margin-left: -1%;
+    width: 60%;
 }
 
 .cuff_image1{
@@ -281,12 +291,11 @@ line-height: 40px
 }
 
 .cuff-side{
-    width: 70%;
+    width: 100%;
     cursor: pointer;
-    outline: 1px solid;
     height: 70px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
+    transition: box-shadow 100ms ease-in-out 0.1s;
+
 }
 
 .cuff-container{
@@ -295,41 +304,20 @@ line-height: 40px
 }
 
 .sleeves-side{
-    width: 70%;
-    outline: 1px solid;
-    height: 70px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-    margin-right: 10px;
-}
-
-.sleeves-side1{
     width: 100%;
-    outline: 1px solid;
-    height: 70px;
     cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-.sleeves-side2{
-    width: 25%;
-    outline: 1px solid;
     height: 70px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
+    transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
 .sleeves-side:hover{
     box-shadow: 2px 2px 1px;
 }
 
-.shirt-side:hover{
-    box-shadow: 2px 2px 1px;
-}
+/* .shirt-side:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+} */
 
-.shirt-container{
-    display: grid;
-    grid-template-columns: auto auto auto
-}
 
 .collarIcon{
     width: 70%;
@@ -353,21 +341,23 @@ line-height: 40px
     background-color: #b43937;
     color: white;
     border: none;
+    height: 7vh;
 }
 
 .toggle-btn-back{
     background-color: #b43937;
     color: white;
     border: none;
+    height: 7vh;
 }
 
 
 .toggle-btn{
-    display: inherit;
+    /* display: inherit;
     height: 40px;
     position: absolute;
     bottom: 250px;
-    right: 265px;
+    right: 265px; */
 
 }
 
@@ -400,36 +390,26 @@ line-height: 40px
 
 
 .revealer {
-    margin-left: -16.8vw;
+    margin-left: -15.8vw;
     padding: 10px;
-    /* top: 7.2pc; */
+    top: 10%;
     background-color: white;
     width: 23%;
     height: 90vh;
     position: absolute;
-    /* bottom: 15vh; */
-    border-left: 1px solid grey
-}
-
-.arrow-close{
-    float: right;
-    cursor: pointer;
-    color: grey;
-    font-size: 25px;
-    
-}
-
-.collar-display{
-    width: 55%;
-}
-
-.collar-displayW{
-    width: 45%;
-    margin-left: -4px; 
-    margin-top: -3.8px;
+    bottom: 15vh;
+    animation-name: slide-bottom;
+    animation-duration: 0.7s
 }
 
 @media screen and (max-width: 500px) {
+
+    .semi_header {
+        width: 100%;
+        position: fixed;
+        margin-top: 10vh;
+    }
+
     .card {
         width: 70px;
         margin: auto;
@@ -437,6 +417,10 @@ line-height: 40px
         display: block;
         /* overflow: hidden; */
     }
+
+    section > div {
+        display: flex;
+        width: 100%;    }
 
     .card > p {
         /* visibility: hidden;
@@ -450,7 +434,8 @@ line-height: 40px
     .card > div {
         margin: auto;
         height: 50px;
-        width: 50px
+        width: 50px;
+        overflow: hidden
     }
 
     .mobile-section{
@@ -469,265 +454,140 @@ line-height: 40px
         position: fixed;
     }
 
-.reveal {
-    background-color: white;
-    width: 100%;
-    height: 25vh;
-    position: absolute;
-    border-bottom: 1px solid grey;
-    border-left: none;
-    bottom: 15vh;
-    margin-left: 0;
-}
+    main > center > div {
+        padding-top: 7%;
+        margin-top: 32%;
+        height: 56vh;
+        width: 90%;
+    }
 
-.revealer {
-    padding: 10px;
-    background-color: white;
-    width: 100%;
-    height: 25vh;
-    position: absolute;
-    bottom: 15vh;
-    border-left: none;
-    border-bottom: 1px solid grey;
-    display: inline-flex;
-    margin-left: 0;
-}
-
-.shirt-sideW {
-    width: 23%;
-    cursor: pointer;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px;
-    margin-top: 25px
-}
-
-.sleeves-side1 {
-    width: 60%;
-    outline: 1px solid;
-    height: 42px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-
-.revealSleeve {
-    display: inline-flex;
-    width: 100%;
-    text-align: center;
-}
-
-.arrow-close{
-    cursor: pointer;
-    color: grey;
-    font-size: 25px;
-    position: absolute;
-    right: 10px;
-    top: 16px;
+    .collar_design {
+     width: 33%;
+     position: sticky;
+     margin-top: 3%;
+     margin-left: -2%;
+    }
     
-}
+    .collar_image{
+        width: 55%;
+    }
 
-.ankara-icon {
-    width: 50%;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px;
-    margin-top: 30px;
-    margin-left: -13px;
-}
+    .collar_image3{
+        width: 55%;
+        margin-left: 3px;
+        margin-top: 6.8px;
+    }
 
-.tooltiptext1 {
-    margin: 0px;
-    margin-left: -12px;
-}
+    .collar_image_side, .collar_image_side2{
+        width: 98%;
+        cursor: pointer;
+        height: auto;
+    }
 
-.collar_design{
-    position: absolute;
-    left: 115px;
-    margin-top: 80px;
-    z-index: 5;
-}
-.collar-display{
-    width: 33%
-}
+    .collar_container, .shirt_container{
+        display: grid;
+        grid-template-columns: auto auto auto
+    }
 
-.collar_image{
-    width: 35%;
-}
+    .collar_container > div {
+        width: 83%
+    }
 
-.collar_image3{
-    width: 31%;
-    margin-left: 3px;
-    margin-top: 6.8px;
-}
+    .shirt-container > div {
+        width: 30%
+    }
 
-.collar_image_side{
-    width: 43%;
-    cursor: pointer;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px;
-}
+    .collar_container > div > div {
+        width: 100%;
+    }
 
-.collar_image_side2 {
-    width: 30%;
-    height: inherit;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
+    .ankara-icon {
+        width: 100%;
+        height: 70px
+    }
 
-.collar-displayW {
-    width: 28%;
-    margin-left: 3px;
-    margin-top: -0.8px;
-}
+    .shirt_design{
+        width: 76%;
+        margin-top: -7.9%;
+    }
 
-.white_collar_image3 {
-    width: 28%;
-    margin-left: 3px;
-    margin-top: -0.8px;
-}
-.collar_image_side1 {
-    width: 30%;
-    cursor: pointer;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 2px 2px 1px;
-    margin-top: 25px;
-}
+    .shirt_image{
+        width: 55%;
+    }
 
-.revealAll {
-    display: inline-flex;
-    text-align: center;
-}   
-
-.collar_image_side:hover{
-    box-shadow: 2px 2px 1px;
-}
-.collar_container{
-    display: grid;
-    grid-template-columns: auto auto auto
-}
-
-.shirt-side{
-    width: 30%;
-    cursor: pointer;
-    outline: 1px solid;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-}
-
-.shirt_design{
-    position: absolute;
-    left: 80px;
-    margin-top: 100px;
-}
-
-.shirt_image{
-    width: 55%;
-}
-
-.shirt_image1{
-    width: 56%;
-    margin-left: 1px;
-    position: relative;
-    bottom: 5px;
-}
+    .shirt_image1{
+        width: 57%;
+    }
 
 
-.shirt-container{
-    display: grid;
-    grid-template-columns: auto auto auto
-}
+    .shirt-container{
+        display: grid;
+        grid-template-columns: auto auto auto
+    }
 
-.sleeves_design{
-    position: absolute;
-    left: 100px;
-    margin-top: 117px;
-}
+    .sleeves_design {
+        width: 73%;
+        position: sticky;
+        margin-top: -66%;
+        margin-left: -2%;
+    }
 
-.sleeves_image{
-    width: 75.8%;
-    position: relative;
-    left: -38px;
-}
+    .sleeves_image{
+        width: 55.8%;
+    }
 
-.sleeves_image1{
-        width: 75%;
-        margin-top: -2px;
-        /* margin-bottom: -8px; */
-        position: relative;
-        left: -37px;
-}
+    .sleeves_image1{
+        width: 70%;
+    }
 
-.sleeves-side{
-    width: 70%;
-    outline: 1px solid;
-    height: 45px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-    margin-top: 38px;
-}
-.sleeves-side2 {
-    width: 79%;
-    outline: 1px solid;
-    height: 45px;
-    cursor: pointer;
-    box-shadow: 2px 5px 3px;
-    margin-top: 35px;
-}
+    .sleeves-side{
+        width: 70%;
+        outline: 1px solid;
+        height: 70px;
+        cursor: pointer;
+        box-shadow: 2px 5px 3px;
+    }
+    .sleeves-side:hover{
+        box-shadow: 2px 2px 1px;
+    }
 
-.white_sleeves_image {
-    width: 94.8%;
-    position: relative;
-    bottom: 50px;
-    right: 64px;
-}
 
-.toggle-btn-front {
-    margin-right: 160px;
-    background-color: #b43937;
-    color: white;
-    border: none;
-}
+    .collarIcon{
+        width: 70%;
+        margin: 5px;
+        margin-top: 15px;
+        margin-left: 10px;
 
-.toggle-btn {
-    display: inherit;
-    height: 40px;
-    position: absolute;
-    bottom: 250px;
-    right: 7px;
-}
+    }
 
-.sleeves-side:hover{
-    box-shadow: 2px 2px 1px;
-}
+    .details{
+        margin-top: 15px;
+    }
 
-.shirt-side:hover{
-    box-shadow: 2px 2px 1px;
-}
+    .shirtIcon{
+        height: 60px;
+        margin-left: 7px;
+    }
 
-.shirt-container{
-    display: grid;
-    grid-template-columns: auto auto auto
-}
+    .reveal, .revealer {
+        height: auto;
+        max-height: 40vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: fixed;
+        bottom: 15vh;
+        width: 100%;
+        margin-left: 0;
+        z-index: 1;
+    }
 
-.collarIcon{
-    width: 70%;
-    margin: 5px;
-    margin-top: 15px;
-    margin-left: 10px;
+    .revealer {
+        top: inherit;
+    }
 
-}
-
-.details{
-    margin-top: 15px;
-}
-
-.shirtIcon{
-    height: 60px;
-    margin-left: 7px;
-}
+    .reveal > div {
+        margin-top: 2%
+    }
 }
 
 /*  Scrool bar styles */
@@ -748,8 +608,38 @@ line-height: 40px
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-
-    
+    background: #555;     
   }
   
+
+ @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(-50px);
+              /* transform: translateX(0); */
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              /* transform: translateX(100px); */
+    }
+  }
+
+ @-webkit-keyframes slide-bottom{
+    0% {
+      -webkit-transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      opacity: 1
+    }
+  }
+  
+
+@-webkit-keyframes shadow-drop-center {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
