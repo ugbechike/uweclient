@@ -20,6 +20,12 @@ import backShirt1 from '../assets/backinvertpleats.png';
 import BackShirt from '../shirt/backShirt';
 import BackLongSleeve from '../assets/backsleeve.png';
 import BackSleeves from '../sleeves/backSleeves';
+import CollarW from '../assets/whitecollar1.png';
+import WhiteCollar from '../collar/whiteCollar';
+import Shirt3 from '../assets/whiteshirt.png';
+import WhiteShirt from '../shirt/whiteShirt';
+import WhiteSleeves from '../sleeves/whiteSleeves';
+import WhiteSleeve1 from '../assets/whitesleeve.png';
 
 
 export default class Joshe extends Component {
@@ -33,7 +39,7 @@ export default class Joshe extends Component {
         showAll: true,
         fab: false,
         sty: true,
-        collarImg: <img style={{ width: '55%' }} src={Collar1} alt='collar' />,
+        collarImg: <img className="collar-display" src={Collar1} alt='collar' />,
         shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
         sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
         backcollarImg: <img style={{ width: '55%' }} src={backCollar} alt='sleeves' />,
@@ -43,7 +49,13 @@ export default class Joshe extends Component {
         frontView: true,
         bacView: false,
         btn: true,
-        resultCollar: false
+        AnkaraCollar: false,
+        witeCollar: false,
+        resultCollar: false,
+        AnkaraShirt: true,
+        ShirtWhite: false,
+        AnkaraSleeve: false,
+        SleeveWhite: false
     }
 
     //HANDLE COLLAR CHANGE
@@ -82,24 +94,84 @@ export default class Joshe extends Component {
     changeShirt = (shirtImg) => {
         this.setState({
             shirtImg,
-
         })
     }
 
     changeSleeves = (sleevesImg) => {
         this.setState({
             sleevesImg,
+        })
+    }
 
+
+    // REAVEL DIFFERENT FABRICS STARTS HERE
+    handleRevealCollar = () => {
+        this.setState({
+            resultCollar: true,
+            AnkaraCollar: true,
+            witeCollar: false,
+            collarImg: <img className='collar-display' src={Collar1} alt='' />
+        });
+    }
+
+    handleWhiteCollar = () => {
+        this.setState({
+            resultCollar: true,
+            AnkaraCollar: false,
+            witeCollar: true,
+            collarImg: <img className="collar-displayW" src={CollarW} alt='' />
+        });
+    }
+
+    handleReavelShirt = () => {
+        this.setState({
+            resultCollar: true,
+            AnkaraShirt: true,
+            AnkaraCollar: false,
+            witeCollar: false,
+            shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
+        })
+    }
+
+    handleReavelWhiteShirt = () => {
+        this.setState({
+            ShirtWhite: true,
+            resultCollar: true,
+            AnkaraShirt: false,
+            AnkaraCollar: false,
+            witeCollar: false,
+            shirtImg: <img className='shirt_image1' src={Shirt3} alt='shirt' />,
 
         })
     }
 
-    handleRevealCollar = () => {
+    handlReavelSleeves = () => {
         this.setState({
+            AnkaraSleeve: true,
             resultCollar: true,
-            collarImg: <img style={{ width: '55%' }} src={Collar1} alt='' />
-        });
+            AnkaraShirt: false,
+            AnkaraCollar: false,
+            witeCollar: false,
+            ShirtWhite: false,
+            sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
+
+        })
     }
+
+    handlReavelWhiteSleeves = () => {
+        this.setState({
+            SleeveWhite: true,
+            AnkaraSleeve: false,
+            resultCollar: true,
+            AnkaraShirt: false,
+            AnkaraCollar: false,
+            witeCollar: false,
+            ShirtWhite: false,
+            sleevesImg: <img className='white_sleeves_image' src={WhiteSleeve1} alt='sleeves' />,
+        })
+    }
+
+    //ENDS HERE
 
 
     handleClose = () => {
@@ -137,6 +209,7 @@ export default class Joshe extends Component {
             revealSleeves: false,
             revealShirt: false,
             revealCuff: false,
+            resultCollar: false
         })
     }
 
@@ -147,7 +220,7 @@ export default class Joshe extends Component {
             revealCollar: false,
             revealSleeves: false,
             revealCuff: false,
-
+            resultCollar: false
         })
     }
 
@@ -157,6 +230,7 @@ export default class Joshe extends Component {
             revealSleeves: !this.state.revealSleeves,
             revealShirt: false,
             revealCollar: false,
+            resultCollar: false
         })
     }
 
@@ -166,7 +240,8 @@ export default class Joshe extends Component {
             revealCuff: !this.state.revealCuff,
             revealSleeves: false,
             revealShirt: false,
-            revealCollar: false
+            revealCollar: false,
+            resultCollar: false
         })
     }
 
@@ -209,16 +284,27 @@ export default class Joshe extends Component {
     }
 
     render() {
-        const { revealCollar, revealShirt, revealSleeves, revealCuff, fab, sty, bacView, frontView, btn, resultCollar } = this.state
+        const {
+            revealCollar,
+            revealShirt,
+            revealSleeves,
+            revealCuff,
+            fab,
+            sty,
+            bacView,
+            frontView,
+            btn,
+            resultCollar,
+            AnkaraCollar,
+            witeCollar,
+            AnkaraShirt,
+            ShirtWhite,
+            AnkaraSleeve,
+            SleeveWhite
+        } = this.state
         return (
             <div className='App'>
                 <header> Uwe  </header>
-                <div className='semi_header'>
-                    <p>
-                        <span style={{ cursor: 'pointer' }} onClick={this.clickFabrics}> Fabrics </span>
-                        <span style={{ cursor: 'pointer' }} onClick={this.clickStyles}> Styles </span>
-                    </p>
-                </div>
                 <div style={{ display: 'flex' }}>
 
                     {/* FRONT VIEW OF SECTION STARTS */}
@@ -291,7 +377,6 @@ export default class Joshe extends Component {
                             }
 
 
-
                             {
                                 sty &&
                                 <div>
@@ -333,48 +418,81 @@ export default class Joshe extends Component {
                     {
                         frontView &&
                         <main>
-                            {
-                                (resultCollar) ?
-                                <div className='revealer'>
-                                        < p > <strong>Styles </strong> <i style={{ float: 'right' }} className='fa fa-arrow-left' onClick={this.handleCollarClose}></i> </p>
-                                       
-                                       {
-                                        //    WhiteCollar &&
-                                        <Collar changeCollar={this.changeCollar} /> 
-                                       } 
-                                    </div> :
-                                    (revealCollar || revealCuff || revealShirt || revealSleeves) ?
-                                        <div className='reveal' >
-                                            <p><strong>Fabrics</strong>  <i style={{ float: 'right' }} className='fa fa-arrow-left' onClick={this.handleClose}></i> </p>
-                                            {
-                                                revealCollar ?
-                                                    <div>
-                                                        <div onClick={this.handleRevealCollar}>
-                                                            <img className='collar_image_side' src={Collar1} alt='collar' />
-                                                            <p className='tooltiptext'>White collars</p>
-                                                        </div>
-                                                        <div onClick={this.handleRevealCollar}>
-                                                            <img className='collar_image_side' src={Collar1} alt='collar' />
-                                                            <p className='tooltiptext'>Black collars</p>
-                                                        </div>
-                                                        <div onClick={this.handleRevealCollar}>
-                                                            <img className='collar_image_side' src={Collar1} alt='collar' />
-                                                            <p className='tooltiptext'>Ankara collars</p>
-                                                        </div>
-                                                    </div> :
-                                                    revealShirt ?
-                                                        <Shirt changeShirt={this.changeShirt} /> :
-                                                        revealSleeves ?
-                                                            <Sleeves changeSleeves={this.changeSleeves} /> :
-                                                            revealCuff ?
-                                                                <Cuff changeCuff={this.changeCuff} /> : null
-                                            }
-                                        </div> : null
-                            }
                             <center>
-                                <DesignArea collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
-                            </center>
 
+                                {
+                                    (resultCollar) ?
+                                        <div className='revealer'>
+                                            < p style={{ fontSize: '20px', height: 50 }} > <strong style={{ float: 'left' }}> Styles </strong> <i className='fa fa-arrow-left arrow-close' onClick={this.handleCollarClose} style={{ float: 'right' }}></i> </p>
+
+                                            {
+                                                AnkaraCollar ?
+                                                    <Collar changeCollar={this.changeCollar} /> :
+
+                                                    witeCollar ?
+                                                        <WhiteCollar changeCollar={this.changeCollar} /> :
+
+                                                        AnkaraShirt ?
+                                                            <Shirt changeShirt={this.changeShirt} /> :
+
+                                                            ShirtWhite ?
+                                                                <WhiteShirt changeShirt={this.changeShirt} /> :
+
+                                                                AnkaraSleeve ?
+                                                                    <Sleeves changeSleeves={this.changeSleeves} /> :
+
+                                                                    SleeveWhite ?
+                                                                        <WhiteSleeves changeSleeves={this.changeSleeves} /> : null
+                                            }
+                                        </div> :
+                                        (revealCollar || revealCuff || revealShirt || revealSleeves) ?
+                                            <div className='reveal' >
+                                                <p style={{ fontSize: '20px' }}><strong style={{ float: 'left', height: 50 }}>Fabrics</strong>  <i style={{ float: 'right', cursor: 'pointer', color: 'grey', fontSize: '25px' }} className='fa fa-arrow-left' onClick={this.handleClose}></i> </p>
+                                                {
+                                                    revealCollar ?
+                                                        <div className='revealAll'>
+                                                            <div onClick={this.handleRevealCollar}>
+                                                                <img className='collar_image_side' src={Collar1} alt='collar' />
+                                                                <p className='tooltiptext'><strong>Ankara <br />Collar</strong></p>
+                                                            </div>
+                                                            <div onClick={this.handleWhiteCollar}>
+                                                                <img className='collar_image_side2' src={CollarW} alt='collar' />
+                                                                <p className='tooltiptext'><strong>White <br />Collar</strong></p>
+                                                            </div>
+                                                        </div> :
+                                                        revealShirt ?
+                                                            <div className='revealAll'>
+                                                                <div onClick={this.handleReavelShirt}>
+                                                                    <img className='shirt-side' src={Shirt1} alt='shirt' />
+                                                                    <p className='tooltiptext'><strong>Ankara <br />Plackets</strong></p>
+                                                                </div>
+                                                                <div onClick={this.handleReavelWhiteShirt}>
+                                                                    <img className='shirt-side' src={Shirt3} alt='shirt' />
+                                                                    <p className='tooltiptext'><strong>White <br />Plackets</strong></p>
+                                                                </div>
+                                                            </div> :
+
+                                                            revealSleeves ?
+                                                                <div className='revealSleeve'>
+                                                                    <div onClick={this.handlReavelSleeves}>
+                                                                        <img className='sleeves-side1' src={Long} alt='shirt' />
+                                                                        <p className='tooltiptext'><strong>Ankara <br />Sleeves</strong></p>
+                                                                    </div>
+                                                                    <div style={{ marginLeft: '20px' }} onClick={this.handlReavelWhiteSleeves}>
+                                                                        <img className='sleeves-side1' src={Long} alt='shirt' />
+                                                                        <p className='tooltiptext'><strong>White <br />Sleeves</strong></p>
+                                                                    </div>
+
+                                                                </div> : null
+
+                                                }
+                                            </div> : null
+                                }
+                                <div>
+                                    <DesignArea WcollarImg={this.state.WcollarImg} collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
+                                </div>
+
+                            </center>
                         </main>
 
                     }
@@ -386,59 +504,46 @@ export default class Joshe extends Component {
                     {
                         bacView &&
                         <main>
+                            <center>
+                                {
+                                    revealCollar &&
+                                    <div className='reveal' >
+                                        <BackCollar changeBackCollar={this.changeBackCollar} />
+                                    </div>
+                                }
 
-                            {
-                                revealCollar &&
-                                <div className='reveal' >
-                                    <BackCollar changeBackCollar={this.changeBackCollar} />
+                                {
+                                    revealShirt &&
+                                    <div className='reveal' >
+                                        <BackShirt changeBackShirt={this.changeBackShirt} />
+                                    </div>
+                                }
+
+                                {
+                                    revealSleeves &&
+                                    <div className='reveal' >
+                                        <BackSleeves changeBackSleeves={this.changeBackSleeves} />
+                                    </div>
+                                }
+
+                                {
+                                    revealCuff &&
+                                    <div className='reveal' >
+                                        <Cuff changeCuff={this.changeCuff} />
+                                    </div>
+                                }
+
+
+                                <div>
+                                    <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
                                 </div>
-                            }
-
-                            {
-                                revealShirt &&
-                                <div className='reveal' >
-                                    <BackShirt changeBackShirt={this.changeBackShirt} />
-                                </div>
-                            }
-
-                            {
-                                revealSleeves &&
-                                <div className='reveal' >
-                                    <BackSleeves changeBackSleeves={this.changeBackSleeves} />
-                                </div>
-                            }
-
-                            {
-                                revealCuff &&
-                                <div className='reveal' >
-                                    <Cuff changeCuff={this.changeCuff} />
-                                </div>
-                            }
-
-                            <div>
-                                <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
-                            </div>
-
+                            </center>
                         </main>
 
                     }
                     {/* BACK VIEW FOR MAIN ENDS HERE */}
 
-                    {
-                        btn &&
-
-                        <div className='toggle-btn'>
-                            <button onClick={this.toggleViewFront}>Front view</button>
-                            <button onClick={this.toggleViewBack}>Back view</button>
-                        </div>
-
-                    }
-
-                    {/*  */}
-
-
                 </div>
-
             </div >
         )
     }

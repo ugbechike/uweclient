@@ -13,7 +13,7 @@ export default function DesignArea(props) {
             {props.sleevesImg}
         </div>
         <div className='cuff_design'>
-            {props.cuffImg}
+            {props.WcollarImg}
         </div>
     </div>
   )

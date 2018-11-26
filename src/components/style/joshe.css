@@ -9,9 +9,11 @@ header{
     height: 10vh;
     background-color: #007b7e;
     line-height: 6rem;
-    color: rgb(17, 14, 14);
+    color: white;
     opacity: 0.9;
     padding: 0 20px;
+    font-size: 30px;
+    font-family: cursive
 }
 
 section {
@@ -70,7 +72,7 @@ line-height: 40px
 }
 
 .reveal {
-    background-color: darkgrey;
+    background-color: white;
     width: 23vw;
     margin-left: -16.8vw;
     height: 90vh;
@@ -114,9 +116,9 @@ main > center > div {
 
 /* WHITE COLLAR STYLE */
 .white_collar_image3{
-    width: 70%;
-    margin-left: -123px;
-    margin-top: -14.8px;
+    width: 48%;
+    margin-left: -8px;
+    margin-top: -5.8px;
 }
 
 .collar_image3{
@@ -128,8 +130,8 @@ main > center > div {
 .semi_header {
     text-align: center;
     height: auto;
-    background-color: rgb(169, 169, 169);
-    color: black;
+    background-color: #b43937;
+    color: white;
     word-spacing: 50px;
     padding: 10px;
 }
@@ -223,12 +225,19 @@ main > center > div {
     width: 54%;
 }
 
+.white_sleeves_image{
+    width: 70.8%;
+    position: relative;
+    bottom: 95px;
+    right: 60px;
+}
+
 /* WHITE SLEEVE STYLE DEMO */
 .white_sleeves_image{
-    width: 58.8%;
+    width: 70.8%;
     position: relative;
-    bottom: 75px;
-    right: 20px;
+    bottom: 95px;
+    right: 60px;
 }
 
 
@@ -298,35 +307,38 @@ main > center > div {
     margin-left: 7px;
 }
 
-.toggle-button{
-    height: 150px;
+.toggle-btn-front{
+    margin-right: 435px;
+    background-color: #b43937;
+    color: white;
+    border: none;
 }
+
+.toggle-btn-back{
+    background-color: #b43937;
+    color: white;
+    border: none;
+}
+
 
 .toggle-btn{
     display: inherit;
     height: 40px;
-    position: fixed;
-    bottom: 0;
-    right: 475px;
-
-}
-
-
-
-.collar_image_side .tooltiptext  {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: pink;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
- 
-    /* Position the tooltip text - see examples below! */
     position: absolute;
-    z-index: 1;
+    bottom: 250px;
+    right: 265px;
+
 }
 
+
+.tooltiptext  {
+   margin: 10px;
+}
+
+.tooltiptext :hover {
+    cursor: pointer;
+    color: #f4993b;
+}
 /* Show the tooltip text when you mouse over the tooltip container */
 .collar_image_side:hover .tooltiptext {
     visibility: visible;
@@ -396,6 +408,11 @@ main > center > div {
         margin: auto;
         height: 50px;
         width: 50px
+    }
+
+    .mobile-section{
+        display: inline-flex;
+        margin: auto;
     }
 
     section {
