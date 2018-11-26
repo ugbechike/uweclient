@@ -177,7 +177,8 @@ width: 100%
 
 .ankara-icon {
     width: 100%;
-    height: 50px
+    height: 50px;
+    cursor: pointer;
 }
 
 .collar-display, .collar-displayW {
@@ -352,14 +353,7 @@ width: 100%
 }
 
 
-.toggle-btn{
-    /* display: inherit;
-    height: 40px;
-    position: absolute;
-    bottom: 250px;
-    right: 265px; */
 
-}
 
 
 .tooltiptext  {
@@ -404,10 +398,46 @@ width: 100%
 
 @media screen and (max-width: 500px) {
 
+    .shirt-side{
+        width: 50%;
+        cursor: pointer;
+        height: 55px;
+    }
+
     .semi_header {
         width: 100%;
         position: fixed;
         margin-top: 10vh;
+    }
+
+    .toggle-btn{
+        position: fixed;
+        top: 0%;
+    
+    }
+
+    .toggle-btn-front {
+        margin-right: 130px;
+        background-color: #b43937;
+        color: white;
+        border: none;
+        height: 7vh;
+    }
+
+    .toggle-btn-back {
+        background-color: #b43937;
+        color: white;
+        border: none;
+        height: 7vh;
+        float: right;
+        margin-right: -15px;
+    }
+
+    .white_sleeves_image {
+        width: 87.5%;
+        position: relative;
+        bottom: 40px;
+        right: 4px;
     }
 
     .card {
@@ -478,8 +508,14 @@ width: 100%
         margin-top: 6.8px;
     }
 
+    .white_collar_image3 {
+        width: 50%;
+        margin-left: 0px;
+        margin-top: -5.8px;
+    }
+
     .collar_image_side, .collar_image_side2{
-        width: 98%;
+        width: 65%;
         cursor: pointer;
         height: auto;
     }
@@ -494,7 +530,7 @@ width: 100%
     }
 
     .shirt-container > div {
-        width: 30%
+        width: 60%
     }
 
     .collar_container > div > div {
@@ -571,7 +607,7 @@ width: 100%
 
     .reveal, .revealer {
         height: auto;
-        max-height: 40vh;
+        max-height: 22vh;
         overflow-y: scroll;
         overflow-x: hidden;
         position: fixed;
