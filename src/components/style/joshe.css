@@ -47,6 +47,7 @@ main {
     height: 70px;
     width: 70px;
     border: 1px solid darkgrey;
+    overflow: hidden;
 }
 
 
@@ -94,7 +95,7 @@ line-height: 40px
 
 .collar_design{
     position: sticky;
-    width: 22%;
+    width: 23%;
     margin-left: -0.9%;
     z-index: 9;
     margin-top: 5%;
@@ -112,6 +113,10 @@ main > center > div {
 
 .collar_image{
     width: 55%;
+}
+
+.collar_image_side1 {
+    width: 30%
 }
 
 /* WHITE COLLAR STYLE */
@@ -136,7 +141,7 @@ main > center > div {
     padding: 10px;
 }
 
-.collar_image_side{
+.collar_image_side, .collar_image_side2{
     width: 100%;
     cursor: pointer;
     transition: box-shadow 100ms ease-in-out 0.1s;
@@ -160,7 +165,23 @@ main > center > div {
 
 .collar_container{
     display: grid;
-    grid-template-columns: auto auto auto
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    height: 70px;
+}
+
+.collar_container > div {
+width: 100%
+}
+
+
+.ankara-icon {
+    width: 100%;
+    height: 50px
+}
+
+.collar-display, .collar-displayW {
+    width: 51%
 }
 
 .shirt-side{
@@ -184,7 +205,9 @@ main > center > div {
 }
 
 .shirt_image{
-    width: 55%;
+    width: 63%;
+    margin-right: 6px;
+    margin-top: 1px
 }
 
 /* WHITE SHIRT DEMO */
@@ -197,7 +220,8 @@ main > center > div {
 }
 
 .shirt_image1{
-    width: 65%;
+    width: 64%;
+    margin-left: 2px;
 }
 
 .back_shirt_image{
@@ -212,32 +236,35 @@ main > center > div {
 
 .sleeves_design{
     position: sticky;
-    margin-top: -44%;
+    margin-top: -43%;
     margin-left: -1%;
     width: 66%;
 }
 
 .sleeves_image{
     width: 53.8%;
+    margin-top: 3px;
 }
 
 .sleeves_image1{
-    width: 54%;
+    width: 53%;
+    margin-top: 0px;
+    margin-right: 1px;
 }
 
 .white_sleeves_image{
-    width: 70.8%;
+    width: 71.5%;
     position: relative;
-    bottom: 95px;
-    right: 60px;
+    bottom: 90px;
+    right: 10px;
 }
 
 /* WHITE SLEEVE STYLE DEMO */
 .white_sleeves_image{
-    width: 70.8%;
+    width: 71.5%;
     position: relative;
-    bottom: 95px;
-    right: 60px;
+    bottom: 90px;
+    right: 10px;
 }
 
 
@@ -281,14 +308,10 @@ main > center > div {
     box-shadow: 2px 2px 1px;
 }
 
-.shirt-side:hover{
+/* .shirt-side:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-}
+} */
 
-.shirt-container{
-    display: grid;
-    grid-template-columns: auto auto auto
-}
 
 .collarIcon{
     width: 70%;
@@ -322,11 +345,11 @@ main > center > div {
 
 
 .toggle-btn{
-    display: inherit;
+    /* display: inherit;
     height: 40px;
     position: absolute;
     bottom: 250px;
-    right: 265px;
+    right: 265px; */
 
 }
 
@@ -359,10 +382,10 @@ main > center > div {
 
 
 .revealer {
-    margin-left: -16.8vw;
+    margin-left: -15.8vw;
     padding: 10px;
-    top: 7.2pc;
-    background-color: pink;
+    top: 10%;
+    background-color: white;
     width: 23%;
     height: 90vh;
     position: absolute;
@@ -378,10 +401,6 @@ main > center > div {
         position: fixed;
         margin-top: 10vh;
     }
-
-/* main > div > div  {
-    margin-top: 10vh;
-} */
 
     .card {
         width: 70px;
@@ -407,7 +426,8 @@ main > center > div {
     .card > div {
         margin: auto;
         height: 50px;
-        width: 50px
+        width: 50px;
+        overflow: hidden
     }
 
     .mobile-section{
@@ -434,7 +454,7 @@ main > center > div {
     }
 
     .collar_design {
-     width: 32%;
+     width: 33%;
      position: sticky;
      margin-top: 3%;
      margin-left: -2%;
@@ -450,17 +470,33 @@ main > center > div {
         margin-top: 6.8px;
     }
 
-    .collar_image_side{
+    .collar_image_side, .collar_image_side2{
         width: 98%;
         cursor: pointer;
         height: auto;
     }
 
-    .collar_container{
+    .collar_container, .shirt_container{
         display: grid;
         grid-template-columns: auto auto auto
     }
 
+    .collar_container > div {
+        width: 83%
+    }
+
+    .shirt-container > div {
+        width: 30%
+    }
+
+    .collar_container > div > div {
+        width: 100%;
+    }
+
+    .ankara-icon {
+        width: 100%;
+        height: 70px
+    }
 
     .shirt_design{
         width: 76%;
@@ -472,8 +508,7 @@ main > center > div {
     }
 
     .shirt_image1{
-        width: 56%;
-
+        width: 57%;
     }
 
 
@@ -508,11 +543,6 @@ main > center > div {
         box-shadow: 2px 2px 1px;
     }
 
-
-    .shirt-container{
-        display: grid;
-        grid-template-columns: auto auto auto
-    }
 
     .collarIcon{
         width: 70%;
