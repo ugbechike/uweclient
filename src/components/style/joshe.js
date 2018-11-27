@@ -459,6 +459,7 @@ export default class Joshe extends Component {
                                                                 <img className='collar_image_side2' src={CollarW} alt='collar' />
                                                                 <p className='tooltiptext'><strong>White <br />Collar</strong></p>
                                                             </div>
+                                                            {/* <div>BLAC COLLAR WILL BE HERE</div> */}
                                                         </div> :
                                                         revealShirt ?
                                                             <div className='revealAll'>
@@ -470,6 +471,7 @@ export default class Joshe extends Component {
                                                                     <img className='shirt-side' src={Shirt3} alt='shirt' />
                                                                     <p className='tooltiptext'><strong>White <br />Plackets</strong></p>
                                                                 </div>
+                                                                {/* <div>BLACK SHIRT WILL BE HERE</div> */}
                                                             </div> :
 
                                                             revealSleeves ?
@@ -482,6 +484,7 @@ export default class Joshe extends Component {
                                                                         <img className='sleeves-side1' src={Long} alt='shirt' />
                                                                         <p className='tooltiptext'><strong>White <br />Sleeves</strong></p>
                                                                     </div>
+                                                                    {/* <div>BLACK SLEEVES WILL BE HERE</div> */}
 
                                                                 </div> : null
 
