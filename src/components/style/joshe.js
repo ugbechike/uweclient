@@ -491,6 +491,7 @@ export default class Joshe extends Component {
                                 <div>
                                     <DesignArea WcollarImg={this.state.WcollarImg} collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
                                 </div>
+<<<<<<< HEAD
                     {
                         btn &&
                         <div className='toggle-btn'>
@@ -501,6 +502,9 @@ export default class Joshe extends Component {
                     }
 
 
+=======
+
+>>>>>>> origin/master
                             </center>
                         </main>
 
@@ -527,6 +531,22 @@ export default class Joshe extends Component {
                                         <BackShirt changeBackShirt={this.changeBackShirt} />
                                     </div>
                                 }
+<<<<<<< HEAD
+
+                                {
+                                    revealSleeves &&
+                                    <div className='reveal' >
+                                        <BackSleeves changeBackSleeves={this.changeBackSleeves} />
+                                    </div>
+                                }
+
+                                {
+                                    revealCuff &&
+                                    <div className='reveal' >
+                                        <Cuff changeCuff={this.changeCuff} />
+                                    </div>
+                                }
+=======
 
                                 {
                                     revealSleeves &&
@@ -543,6 +563,15 @@ export default class Joshe extends Component {
                                 }
 
 
+                                <div>
+                                    <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
+                                </div>
+                            </center>
+                        </main>
+>>>>>>> origin/master
+
+
+<<<<<<< HEAD
                                 <div>
                                     <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
                                 </div>
@@ -564,6 +593,8 @@ export default class Joshe extends Component {
                     }
                     {/* BACK VIEW FOR MAIN ENDS HERE */}
 
+=======
+>>>>>>> origin/master
                 </div>
             </div >
         )
