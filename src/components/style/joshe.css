@@ -75,12 +75,13 @@ line-height: 40px
 .reveal {
     background-color: white;
     width: 23vw;
-    margin-left: -16.8vw;
+    margin-left: -15.4vw;
     height: 90vh;
     position: absolute;
     padding: 10px;
     animation-name: slide-right;
-    animation-duration: 0.7s
+    animation-duration: 0.7s;
+    border-right: 1px solid gray;
 }
 
 .reveal > div > div {
@@ -116,7 +117,8 @@ main > center > div {
 }
 
 .collar_image_side1 {
-    width: 30%
+    width: 53%;
+    cursor: pointer;
 }
 
 /* WHITE COLLAR STYLE */
@@ -124,6 +126,11 @@ main > center > div {
     width: 48%;
     margin-left: -8px;
     margin-top: -5.8px;
+}
+
+.white_collar_container{
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .collar_image3{
@@ -155,7 +162,10 @@ main > center > div {
     box-shadow: 2px 5px 3px;
 } */
 
-.collar_image_side:hover{
+.collar_image_side:hover, 
+.collar_image_side2:hover, 
+.ankara-icon:hover,
+.collar_image_side1:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
@@ -176,7 +186,7 @@ width: 100%
 
 
 .ankara-icon {
-    width: 100%;
+    width: 65%;
     height: 50px;
     cursor: pointer;
 }
@@ -186,9 +196,9 @@ width: 100%
 }
 
 .shirt-side{
-    width: 100%;
+    width: 85%;
     cursor: pointer;
-    height: 70px;
+    height: 65px;
     transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
@@ -384,7 +394,7 @@ width: 100%
 
 
 .revealer {
-    margin-left: -15.8vw;
+    margin-left: -15.4vw;
     padding: 10px;
     top: 10%;
     background-color: white;
@@ -393,7 +403,8 @@ width: 100%
     position: absolute;
     bottom: 15vh;
     animation-name: slide-bottom;
-    animation-duration: 0.7s
+    animation-duration: 0.7s;
+    border-left: 1px solid gray;
 }
 
 @media screen and (max-width: 500px) {

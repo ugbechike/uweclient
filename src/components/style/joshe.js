@@ -423,7 +423,7 @@ export default class Joshe extends Component {
                                 {
                                     (resultCollar) ?
                                         <div className='revealer'>
-                                            < p style={{ fontSize: '20px', height: 50 }} > <strong style={{ float: 'left' }}> Styles </strong> <i className='fa fa-arrow-left arrow-close' onClick={this.handleCollarClose} style={{ float: 'right' }}></i> </p>
+                                            < p style={{ fontSize: '20px', height: 50 }} > <strong style={{ float: 'left' }}> Styles </strong> <i  className='fa fa-arrow-left arrow-close' onClick={this.handleCollarClose} style={{ float: 'right', cursor: 'pointer' }}></i> </p>
 
                                             {
                                                 AnkaraCollar ?
