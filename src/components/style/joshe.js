@@ -91,9 +91,10 @@ export default class Joshe extends Component {
     }
 
     //HANDLE CHANGE OF SHIRTS
-    changeShirt = (shirtImg) => {
+    changeShirt = (shirtImg, backshirtImg) => {
         this.setState({
             shirtImg,
+            backshirtImg
         })
     }
 
