@@ -55,7 +55,16 @@ export default class Joshe extends Component {
         AnkaraShirt: true,
         ShirtWhite: false,
         AnkaraSleeve: false,
-        SleeveWhite: false
+        SleeveWhite: false,
+        isLoading: true,
+    }
+
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            })
+        }, 2000);
     }
 
     //HANDLE COLLAR CHANGE
@@ -301,7 +310,8 @@ export default class Joshe extends Component {
             AnkaraShirt,
             ShirtWhite,
             AnkaraSleeve,
-            SleeveWhite
+            SleeveWhite,
+            isLoading
         } = this.state
         return (
             <div className='App'>
@@ -415,6 +425,10 @@ export default class Joshe extends Component {
 
 
                     {/* FRONT VIEW MAIN STARTS HERE */}
+                    {
+                        isLoading && 
+                        <div>Loading....</div>
+                    }
 
                     {
                         frontView &&
