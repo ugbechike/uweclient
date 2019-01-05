@@ -23,7 +23,9 @@ import BackSleeves from '../sleeves/backSleeves';
 import CollarW from '../assets/whitecollar1.png';
 import WhiteCollar from '../collar/whiteCollar';
 import Shirt3 from '../assets/whiteshirt.png';
+import blackShirt3 from '../assets/blackShirt.png';
 import WhiteShirt from '../shirt/whiteShirt';
+import BlackShirt from '../shirt/blackShirt';
 import WhiteSleeves from '../sleeves/whiteSleeves';
 import WhiteSleeve1 from '../assets/whitesleeve.png';
 import PageLoader from '../Loader/Loader1';
@@ -56,6 +58,7 @@ export default class Joshe extends Component {
         resultCollar: false,
         AnkaraShirt: true,
         ShirtWhite: false,
+        ShirtBlack: false,
         AnkaraSleeve: false,
         SleeveWhite: false,
         pageLoader: true,
@@ -101,7 +104,7 @@ export default class Joshe extends Component {
         })
     }
 
-    //HANDLE CHANGE OF SHIRTS
+    //HANDLE CHANGE OF SHIRTS AND THE BACK SHIRT
     changeShirt = (shirtImg, backshirtImg) => {
         this.setState({
             shirtImg,
@@ -148,6 +151,7 @@ export default class Joshe extends Component {
     handleReavelWhiteShirt = () => {
         this.setState({
             ShirtWhite: true,
+            ShirtBlack: false,
             resultCollar: true,
             AnkaraShirt: false,
             AnkaraCollar: false,
@@ -155,6 +159,20 @@ export default class Joshe extends Component {
             shirtImg: <img className='shirt_image1' src={Shirt3} alt='shirt' />,
         })
     }
+
+    // For the black shirt
+    handleReavelBlackShirt = () => {
+        this.setState({
+            ShirtBlack: true,
+            ShirtWhite: false,
+            resultCollar: true,
+            AnkaraShirt: false,
+            AnkaraCollar: false,
+            witeCollar: false,
+            shirtImg: <img className='shirt_image1' src={blackShirt3} alt='shirt' />,
+        })
+    }
+
 
     handlReavelSleeves = () => {
         this.setState({
@@ -164,6 +182,7 @@ export default class Joshe extends Component {
             AnkaraCollar: false,
             witeCollar: false,
             ShirtWhite: false,
+            ShirtBlack: false,
             sleevesImg: <img className='sleeves_image1' src={LongSleeve} alt='sleeves' />,
         })
     }
@@ -177,6 +196,7 @@ export default class Joshe extends Component {
             AnkaraCollar: false,
             witeCollar: false,
             ShirtWhite: false,
+            ShirtBlack: false,
             sleevesImg: <img className='white_sleeves_image' src={WhiteSleeve1} alt='sleeves' />,
         })
     }
@@ -318,6 +338,7 @@ export default class Joshe extends Component {
             witeCollar,
             AnkaraShirt,
             ShirtWhite,
+            ShirtBlack,
             AnkaraSleeve,
             SleeveWhite,
             pageLoader,
@@ -445,10 +466,7 @@ export default class Joshe extends Component {
 
 
                     {/* FRONT VIEW MAIN STARTS HERE */}
-                    {
-                        isLoading && 
-                        <div>Loading....</div>
-                    }
+                
 
                     {
                         frontView &&
@@ -472,6 +490,9 @@ export default class Joshe extends Component {
 
                                                             ShirtWhite ?
                                                                 <WhiteShirt changeShirt={this.changeShirt} /> :
+
+                                                                ShirtBlack ?
+                                                                <BlackShirt changeShirt={this.changeShirt} /> :
 
                                                                 AnkaraSleeve ?
                                                                     <Sleeves changeSleeves={this.changeSleeves} /> :
@@ -506,7 +527,10 @@ export default class Joshe extends Component {
                                                                     <img className='shirt-side' src={Shirt3} alt='shirt' />
                                                                     <p className='tooltiptext'><strong>White <br />Plackets</strong></p>
                                                                 </div>
-                                                                {/* <div>BLACK SHIRT WILL BE HERE</div> */}
+                                                                <div onClick={this.handleReavelBlackShirt}>
+                                                                    <img className='shirt-side' src={blackShirt3} alt='shirt' />
+                                                                    <p className='tooltiptext'><strong>Black <br />Plackets</strong></p>
+                                                                </div>
                                                             </div> :
 
                                                             revealSleeves ?
