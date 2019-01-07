@@ -17,6 +17,7 @@ import backCollar from '../assets/backcollar.png';
 import BackDesignArea from '../designArea/backDesign';
 import BackCollar from '../collar/backCollar';
 import backShirt1 from '../assets/backinvertpleats.png';
+import whiteBackShirt1 from '../assets/whitebacknopleats.png';
 import BackShirt from '../shirt/backShirt';
 import BackLongSleeve from '../assets/backsleeve.png';
 import BackSleeves from '../sleeves/backSleeves';
@@ -30,6 +31,7 @@ import WhiteSleeves from '../sleeves/whiteSleeves';
 import WhiteSleeve1 from '../assets/whitesleeve.png';
 import PageLoader from '../Loader/Loader1';
 import ItemLoader from "../Loader/Loader3";
+import WhiteBackShirt from '../shirt/whiteBackShirt';
 
 
 export default class Joshe extends Component {
@@ -37,6 +39,7 @@ export default class Joshe extends Component {
     state = {
         revealCollar: false,
         revealShirt: false,
+        revealWhiteShirt: false,
         revealSleeves: false,
         revealCuff: false,
         hideClothes: false,
@@ -54,10 +57,12 @@ export default class Joshe extends Component {
         bacView: false,
         btn: true,
         AnkaraCollar: false,
+        backResult: true,
         witeCollar: false,
         resultCollar: false,
         AnkaraShirt: true,
         ShirtWhite: false,
+        revealWhiteShirt: false,
         ShirtBlack: false,
         AnkaraSleeve: false,
         SleeveWhite: false,
@@ -123,6 +128,7 @@ export default class Joshe extends Component {
     handleRevealCollar = () => {
         this.setState({
             resultCollar: true,
+            backResult: true,
             AnkaraCollar: true,
             witeCollar: false,
             collarImg: <img className='collar-display' src={Collar1} alt='' />
@@ -132,6 +138,7 @@ export default class Joshe extends Component {
     handleWhiteCollar = () => {
         this.setState({
             resultCollar: true,
+            backResult: true,
             AnkaraCollar: false,
             witeCollar: true,
             collarImg: <img className="collar-displayW" src={CollarW} alt='' />
@@ -141,10 +148,23 @@ export default class Joshe extends Component {
     handleReavelShirt = () => {
         this.setState({
             resultCollar: true,
+            backResult: true,
             AnkaraShirt: true,
             AnkaraCollar: false,
             witeCollar: false,
             shirtImg: <img className='shirt_image1' src={Shirt1} alt='shirt' />,
+        })
+    }
+
+    // JUST TO TEST WHJITE SHIRT
+    handleReavelWhitebackShirt = () => {
+        this.setState({
+            resultCollar: true,
+            backResult: true,
+            AnkaraShirt: true,
+            AnkaraCollar: false,
+            witeCollar: false,
+            shirtImg: <img className='shirt_image1' src={whiteBackShirt1} alt='shirt' />,
         })
     }
 
@@ -153,6 +173,7 @@ export default class Joshe extends Component {
             ShirtWhite: true,
             ShirtBlack: false,
             resultCollar: true,
+            backResult: true,
             AnkaraShirt: false,
             AnkaraCollar: false,
             witeCollar: false,
@@ -166,6 +187,7 @@ export default class Joshe extends Component {
             ShirtBlack: true,
             ShirtWhite: false,
             resultCollar: true,
+            backResult: true,
             AnkaraShirt: false,
             AnkaraCollar: false,
             witeCollar: false,
@@ -178,6 +200,7 @@ export default class Joshe extends Component {
         this.setState({
             AnkaraSleeve: true,
             resultCollar: true,
+            backResult: true,
             AnkaraShirt: false,
             AnkaraCollar: false,
             witeCollar: false,
@@ -192,6 +215,7 @@ export default class Joshe extends Component {
             SleeveWhite: true,
             AnkaraSleeve: false,
             resultCollar: true,
+            backResult: true,
             AnkaraShirt: false,
             AnkaraCollar: false,
             witeCollar: false,
@@ -228,7 +252,9 @@ export default class Joshe extends Component {
     //HANDLE COLLAR TOGGLE SIDEBAR
     handleCollarClose = () => {
         this.setState({
-            resultCollar: false
+            resultCollar: false,
+            backResult: true,
+            
         })
     }
 
@@ -238,7 +264,7 @@ export default class Joshe extends Component {
             revealSleeves: false,
             revealShirt: false,
             revealCuff: false,
-            resultCollar: false
+            resultCollar: false,
         })
     }
 
@@ -325,6 +351,7 @@ export default class Joshe extends Component {
     render() {
         const {
             revealCollar,
+            backResult,
             revealShirt,
             revealSleeves,
             revealCuff,
@@ -338,6 +365,8 @@ export default class Joshe extends Component {
             witeCollar,
             AnkaraShirt,
             ShirtWhite,
+            backShirtWhite,
+            revealWhiteShirt,
             ShirtBlack,
             AnkaraSleeve,
             SleeveWhite,
@@ -413,7 +442,7 @@ export default class Joshe extends Component {
 
 
                     {/* BACK VIEW FOR SECTION */}
-                    {
+                    {/* {
                         bacView &&
 
                         <section>
@@ -461,7 +490,7 @@ export default class Joshe extends Component {
                             }
 
                         </section>
-                    }
+                    } */}
                     {/* BACK VIEW SECTION ENDS HERE */}
 
 
@@ -550,7 +579,7 @@ export default class Joshe extends Component {
                                                 }
                                             </div> : null
                                 }
-                                <div>
+                                <div className="testing_you">
                                     <DesignArea WcollarImg={this.state.WcollarImg} collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} sleevesImg={this.state.sleevesImg} cuffImg={this.state.cuffImg} />
                                 </div>
                                 {
@@ -570,12 +599,66 @@ export default class Joshe extends Component {
                     {/* FRONT VIEW FOR MAIN ENDS HERE */}
 
 
+
+
+
                     {/* BACK VIEW FOR MAIN STARTS HERE */}
 
                     {
                         bacView &&
-                        <main>
+                        <aside>
                             <center>
+                            {
+                                    (backResult) ?
+                                        <div className='revealer-back'>
+                                            < p style={{ fontSize: '20px', height: 50 }} > <strong style={{ float: 'left' }}> Styles </strong> <i  className='fa fa-arrow-left arrow-close' onClick={this.handleCollarClose} style={{ float: 'right', cursor: 'pointer' }}></i> </p>
+
+                                            {
+                                                AnkaraCollar ?
+                                                    <BackCollar changeCollar={this.changeCollar} /> :
+
+                                                    witeCollar ?
+                                                        <WhiteCollar changeCollar={this.changeCollar} /> :
+
+                                                        AnkaraShirt ?
+                                                            <BackShirt changeShirt={this.changeBackShirt} /> :
+
+                                                            ShirtWhite ?
+                                                                <WhiteBackShirt changeShirt={this.changeBackShirt} /> :
+
+                                                                ShirtBlack ?
+                                                                <BlackShirt changeShirt={this.changeShirt} /> :
+
+                                                                AnkaraSleeve ?
+                                                                    <BackSleeves changeSleeves={this.changeSleeves} /> :
+
+                                                                    SleeveWhite ?
+                                                                        <WhiteSleeves changeSleeves={this.changeSleeves} /> : null
+                                            }
+                                        </div> : null
+
+
+                            }
+                                <div className="testing_you">
+                                    <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
+                                </div>
+
+
+                                {
+                                    btn &&
+
+                                    <div className='toggle-btn'>
+                                        <button className='toggle-btn-front1' onClick={this.toggleViewFront}>Front view</button>
+                                        <button className='toggle-btn-back1' onClick={this.toggleViewBack}>Back view</button>
+                                    </div>
+
+                                }
+
+                            </center>
+                        </aside>
+
+                    }
+{/*                                 
                                 {
                                     revealCollar &&
                                     <div className='reveal' >
@@ -602,28 +685,7 @@ export default class Joshe extends Component {
                                     <div className='reveal' >
                                         <Cuff changeCuff={this.changeCuff} />
                                     </div>
-                                }
-
-
-                                <div>
-                                    <BackDesignArea backcollarImg={this.state.backcollarImg} backshirtImg={this.state.backshirtImg} backsleevesImg={this.state.backsleevesImg} />
-                                </div>
-
-
-                                {
-                                    btn &&
-
-                                    <div className='toggle-btn'>
-                                        <button className='toggle-btn-front' onClick={this.toggleViewFront}>Front view</button>
-                                        <button className='toggle-btn-back' onClick={this.toggleViewBack}>Back view</button>
-                                    </div>
-
-                                }
-
-                            </center>
-                        </main>
-
-                    }
+                                } */}
                     {/* BACK VIEW FOR MAIN ENDS HERE */}
 
                 </div>

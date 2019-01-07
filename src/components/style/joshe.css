@@ -25,7 +25,14 @@ main {
     width: -webkit-fill-available;
     height: 90vh;
     float: left;
-    overflow-y: scroll
+    overflow-y: hidden;
+}
+
+aside {
+    width: -webkit-fill-available;
+    height: 90vh;
+    float: left;
+    overflow-y: hidden;
 }
 
 .overlay {
@@ -71,13 +78,14 @@ line-height: 40px
 .reveal {
     background-color: white;
     width: 23vw;
-    margin-left: -15.4vw;
+    margin-left: -17.4vw;
     height: 90vh;
     position: absolute;
     padding: 10px;
     animation-name: slide-right;
     animation-duration: 0.7s;
     border-right: 1px solid gray;
+    margin-top: -15px;
 }
 
 .reveal > div > div {
@@ -90,6 +98,7 @@ line-height: 40px
     width: 100%
 }
 
+.back_collar_design,
 .collar_design{
     position: sticky;
     width: 23%;
@@ -105,8 +114,33 @@ main > center > div {
     background-color: transparent;
     padding: 0;
     /* border: 1px dotted darkgrey; */
-    padding-top: 3pc;
 }
+
+aside > center > div {
+    height: 70vh;
+    width: 58%;
+    background-color: transparent;
+    padding: 0;
+    border: 1px dotted darkgrey;
+    margin-left: 280px;
+
+    /* height: 60vh;
+    width: 70%;
+    background-color: transparent;
+    padding: 0;
+    border: 1px dotted darkgrey;
+    padding-top: 3pc; */
+    /* margin: auto; */
+    
+}
+
+.testing_you {
+    border: 1px solid;
+    margin-top: 15px;
+}
+
+
+
 
 .collar_image{
     width: 55%;
@@ -206,7 +240,7 @@ width: 100%
 
 .back_shirt_design{
     width: 44%;
-    margin-top: -5.9%;
+    margin-top: -6.5%;
     z-index: 200;
     position: sticky;
 }
@@ -245,6 +279,30 @@ width: 100%
 .shirt-container{
     display: grid;
     grid-template-columns: auto auto auto
+}
+
+.shirt-container>div {
+        width: 100px;
+        border: 1px solid;
+        height: 119px;
+        padding-top: 12px;
+        cursor: pointer;
+        border-radius: 5px;
+}
+
+.back-shirt-container{
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+
+.back-shirt-container>div {
+        width: 100px;
+        border: 1px solid;
+        height: 119px;
+        padding-top: 12px;
+        margin-right: 15px;
+        cursor: pointer;
+        border-radius: 5px;
 }
 
 .sleeves_design{
@@ -310,7 +368,8 @@ width: 100%
     grid-template-columns: auto auto auto
 }
 
-.sleeves-side{
+
+/* .sleeves-side{
     width: 100%;
     cursor: pointer;
     height: 70px;
@@ -319,7 +378,8 @@ width: 100%
 
 .sleeves-side:hover{
     box-shadow: 2px 2px 1px;
-}
+} */
+
 
 /* .shirt-side:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
@@ -344,11 +404,33 @@ width: 100%
 }
 
 .toggle-btn-front{
-    margin-right: 435px;
+    /* margin-right: 435px; */
+    margin-right: 697px;
     background-color: #b43937;
     color: white;
     border: none;
     height: 7vh;
+    position: relative;
+    bottom: 65px;
+}
+
+.toggle-btn-front1{
+    margin-right: 638px;
+    background-color: #b43937;
+    color: white;
+    border: none;
+    height: 7vh;
+    position: relative;
+    bottom: 65px;
+}
+
+.toggle-btn-back1{
+    background-color: #b43937;
+    color: white;
+    border: none;
+    height: 7vh;
+    position: relative;
+    bottom: 65px;
 }
 
 .toggle-btn-back{
@@ -356,6 +438,8 @@ width: 100%
     color: white;
     border: none;
     height: 7vh;
+    position: relative;
+    bottom: 65px;
 }
 
 
@@ -390,7 +474,7 @@ width: 100%
 
 
 .revealer {
-    margin-left: -15.4vw;
+    margin-left: -17.4vw;
     padding: 10px;
     top: 10%;
     background-color: white;
@@ -401,6 +485,22 @@ width: 100%
     animation-name: slide-bottom;
     animation-duration: 0.7s;
     border-left: 1px solid gray;
+}
+
+.revealer-back {
+    margin-left: -0.4vw;
+    padding: 10px;
+    top: 10.5%;
+    background-color: white;
+    width: 25%;
+    height: 90vh;
+    position: absolute;
+    bottom: 15vh;
+    animation-name: slide-bottom;
+    animation-duration: 0.7s;
+    border-left: 1px solid gray;
+    border: 1px solid grey;
+    background: #f3f3f3;
 }
 
 @media screen and (max-width: 500px) {
@@ -423,12 +523,41 @@ width: 100%
     
     }
 
-    .toggle-btn-front {
-        margin-right: 130px;
+    .testing_you {
+        border: 1px solid !important;
+        /* margin-top: 62px; */
+    }
+
+    .toggle-btn-front1 {
+        margin-right: 45px;
         background-color: #b43937;
         color: white;
         border: none;
         height: 7vh;
+        position: relative;
+        top: 230px;
+    }
+
+    .toggle-btn-back1 {
+        background-color: #b43937;
+        color: white;
+        border: none;
+        height: 7vh;
+        float: right;
+        margin-right: 0 !important;
+        position: relative;
+        top: 230px;
+        left: 32px;
+    }
+
+    .toggle-btn-front {
+        margin-right: 120px;
+        background-color: #b43937;
+        color: white;
+        border: none;
+        height: 7vh;
+        position: relative;
+        top: 230px;
     }
 
     .toggle-btn-back {
@@ -438,6 +567,8 @@ width: 100%
         height: 7vh;
         float: right;
         margin-right: -15px;
+        position: relative;
+        top: 230px;
     }
 
     .white_sleeves_image {
@@ -491,10 +622,30 @@ width: 100%
         position: fixed;
     }
 
+    aside > center > div {
+        height: 45vh;
+        width: 81%;
+        background-color: transparent;
+        padding: 0;
+        margin-top: 32% !important;
+        margin-left: 0 !important;
+        border: none;
+    
+        /* height: 60vh;
+        width: 70%;
+        background-color: transparent;
+        padding: 0;
+        border: 1px dotted darkgrey;
+        padding-top: 3pc; */
+        /* margin: auto; */
+        
+    }
+    
+
     main > center > div {
         padding-top: 7%;
-        margin-top: 32%;
-        height: 56vh;
+        margin-top: 32% !important;
+        height: 50vh;
         width: 90%;
     }
 
@@ -503,6 +654,14 @@ width: 100%
      position: sticky;
      margin-top: 3%;
      margin-left: -2%;
+    }
+
+    .back_collar_design {
+        width: 33%;
+     position: sticky;
+     margin-top: 3%;
+     margin-left: -2%;
+     z-index: -4;
     }
     
     .collar_image{
@@ -536,10 +695,12 @@ width: 100%
         width: 83%
     }
 
-    .shirt-container > div {
-        width: 60%
+    .shirt-container>div {
+        width: 60%;
+        border: 1px solid black;
     }
 
+    
     .collar_container > div > div {
         width: 100%;
     }
@@ -553,6 +714,20 @@ width: 100%
         width: 76%;
         margin-top: -7.9%;
     }
+
+    .back_shirt_design {
+        width: 76%;
+        margin-top: -7.9%;
+    }
+    
+    .back_sleeves_design {
+        width: 84%;
+        position: sticky;
+        margin-top: -66%;
+        margin-left: -2%;
+    }
+
+   
 
     .shirt_image{
         width: 55%;
@@ -614,17 +789,33 @@ width: 100%
 
     .reveal, .revealer {
         height: auto;
-        max-height: 22vh;
+        max-height: 32vh;
         overflow-y: scroll;
         overflow-x: hidden;
         position: fixed;
-        bottom: 15vh;
+        bottom: 0vh;
+        width: 100%;
+        margin-left: 0;
+        z-index: 1;
+    }
+
+    .revealer-back {
+        height: auto;
+        max-height: 33vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: fixed;
+        bottom: 0vh;
         width: 100%;
         margin-left: 0;
         z-index: 1;
     }
 
     .revealer {
+        top: inherit;
+    }
+
+    .revealer-back {
         top: inherit;
     }
 

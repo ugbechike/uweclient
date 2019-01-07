@@ -1,7 +1,8 @@
 import React from 'react';
 import Shirt1 from '../assets/shirtYesBtn.png'
 import Shirt2 from '../assets/shirtNoBtn.png'
-import backShirt1 from '../assets/backinvertpleats.png'
+import backShirt1 from '../assets/backinvertpleats.png';
+import backShirt2 from '../assets/backnopleats.png';
 
 
 export default function Shirt(props) {
@@ -11,7 +12,7 @@ export default function Shirt(props) {
                 <img className='shirt-side' src={Shirt1} alt='shirt' />
                 <p className='tooltiptext'><strong>Button <br />placket</strong></p>
             </div>
-            <div onClick={() => props.changeShirt(<img className='shirt_image' src={Shirt2} alt='shirt' />)}>
+            <div onClick={() => props.changeShirt(<img className='shirt_image' src={Shirt2} alt='shirt' />, <img className='back_shirt_image'  src={backShirt2} alt='shirt' />)}>
                 <img className='shirt-side' src={Shirt2} alt='shirt' />
                 <p className='tooltiptext'><strong>Plain <br />placket</strong></p>
             </div>
