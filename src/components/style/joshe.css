@@ -26,6 +26,7 @@ main {
     height: 90vh;
     float: left;
     overflow-y: hidden;
+    background: #c7c1c1;
 }
 
 aside {
@@ -76,7 +77,6 @@ line-height: 40px
 }
 
 .reveal {
-    background-color: white;
     width: 23vw;
     margin-left: -17.4vw;
     height: 90vh;
@@ -86,11 +86,24 @@ line-height: 40px
     animation-duration: 0.7s;
     border-right: 1px solid gray;
     margin-top: -15px;
+    background: #c7c1c1;
 }
 
 .reveal > div > div {
     width: 30%;
+    background: #1a888b;
+    border-radius: 5px;
+    padding-top: 5px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    height: 120px;
 }
+
+.reveal > div > div:hover {
+    box-shadow: none;
+}
+
 
 .reveal > div {
     display: inline-flex;
@@ -135,8 +148,13 @@ aside > center > div {
 }
 
 .testing_you {
-    border: 1px solid;
     margin-top: 15px;
+    background: #1a888b;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 3px 9px 2px rgb(49, 48, 48);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 3px 9px 2px rgb(49, 48, 48);  /* Firefox 3.5 - 3.6 */
+    box-shadow:       1px 3px 9px 2px rgb(49, 48, 48);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    padding-top: 5px;
 }
 
 
@@ -181,7 +199,6 @@ aside > center > div {
 .collar_image_side, .collar_image_side2, .back_image_side{
     width: 100%;
     cursor: pointer;
-    transition: box-shadow 100ms ease-in-out 0.1s;
 }
 
 /* .back_image_side{
@@ -192,12 +209,12 @@ aside > center > div {
     box-shadow: 2px 5px 3px;
 } */
 
-.collar_image_side:hover, 
+/* .collar_image_side:hover, 
 .collar_image_side2:hover, 
 .ankara-icon:hover,
 .collar_image_side1:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-}
+} */
 
 .back_image_side:hover{
     box-shadow: 2px 2px 1px;
@@ -210,8 +227,32 @@ aside > center > div {
     height: 70px;
 }
 
+.side_ankara {
+    background: url('../assets/ankara1.PNG') !important;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
+.side_white {
+    background: url('../assets/white-mat.jpg') !important;
+    background-size: cover;
+}
+
+.side_black {
+    background: url('../assets/wood.png') !important;
+    background-size: cover;
+}
+
+
 .collar_container > div {
-width: 100%
+width: 90%;
+background: #1a888b;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-right: 10px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 
@@ -283,11 +324,11 @@ width: 100%
 
 .shirt-container>div {
         width: 100px;
-        border: 1px solid;
         height: 119px;
         padding-top: 12px;
         cursor: pointer;
         border-radius: 5px;
+        background: #1a888b;
 }
 
 .back-shirt-container{
@@ -443,11 +484,30 @@ width: 100%
 }
 
 
+strong {
+    font-family: cursive;
+}
 
 
 
 .tooltiptext  {
-   margin: 10px;
+    font-family: cursive;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    position: relative;
+    top: 1px;
+}
+
+.tooltiptext1 {
+    font-family: cursive;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    position: relative;
+    top: 72px;
 }
 
 .tooltiptext :hover {
@@ -477,7 +537,6 @@ width: 100%
     margin-left: -17.4vw;
     padding: 10px;
     top: 10%;
-    background-color: white;
     width: 23%;
     height: 90vh;
     position: absolute;
@@ -485,6 +544,7 @@ width: 100%
     animation-name: slide-bottom;
     animation-duration: 0.7s;
     border-left: 1px solid gray;
+    background: #c7c1c1;
 }
 
 .revealer-back {

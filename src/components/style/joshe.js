@@ -26,9 +26,11 @@ import WhiteCollar from '../collar/whiteCollar';
 import Shirt3 from '../assets/whiteshirt.png';
 import blackShirt3 from '../assets/blackShirt.png';
 import WhiteShirt from '../shirt/whiteShirt';
+import BlackSleeves from '../sleeves/blackSleeves';
 import BlackShirt from '../shirt/blackShirt';
 import WhiteSleeves from '../sleeves/whiteSleeves';
 import WhiteSleeve1 from '../assets/whitesleeve.png';
+import BlackSleeve from '../assets/blacklongSleeves.png';
 import PageLoader from '../Loader/Loader1';
 import ItemLoader from "../Loader/Loader3";
 import WhiteBackShirt from '../shirt/whiteBackShirt';
@@ -66,6 +68,7 @@ export default class Joshe extends Component {
         ShirtBlack: false,
         AnkaraSleeve: false,
         SleeveWhite: false,
+        SleeveBlack: false,
         pageLoader: true,
         itemLoader: false
     }
@@ -221,7 +224,22 @@ export default class Joshe extends Component {
             witeCollar: false,
             ShirtWhite: false,
             ShirtBlack: false,
-            sleevesImg: <img className='white_sleeves_image' src={WhiteSleeve1} alt='sleeves' />,
+            sleevesImg: <img className='sleeves_image1' src={WhiteSleeve1} alt='sleeves' />,
+        })
+    }
+
+    handlReavelBlackSleeves = () => {
+        this.setState({
+            SleeveBlack: true,
+            AnkaraSleeve: false,
+            resultCollar: true,
+            backResult: true,
+            AnkaraShirt: false,
+            AnkaraCollar: false,
+            witeCollar: false,
+            ShirtWhite: false,
+            ShirtBlack: false,
+            sleevesImg: <img className='sleeves_image1' src={BlackSleeve} alt='sleeves' />,
         })
     }
     //ENDS HERE
@@ -369,6 +387,7 @@ export default class Joshe extends Component {
             revealWhiteShirt,
             ShirtBlack,
             AnkaraSleeve,
+            SleeveBlack,
             SleeveWhite,
             pageLoader,
             itemLoader
@@ -527,7 +546,10 @@ export default class Joshe extends Component {
                                                                     <Sleeves changeSleeves={this.changeSleeves} /> :
 
                                                                     SleeveWhite ?
-                                                                        <WhiteSleeves changeSleeves={this.changeSleeves} /> : null
+                                                                        <WhiteSleeves changeSleeves={this.changeSleeves} /> :
+
+                                                                        SleeveBlack ?
+                                                                        <BlackSleeves changeSleeves={this.changeSleeves} /> : null
                                             }
                                         </div> :
                                         (revealCollar || revealCuff || revealShirt || revealSleeves) ?
@@ -536,43 +558,63 @@ export default class Joshe extends Component {
                                                 {
                                                     revealCollar ?
                                                         <div className='revealAll'>
-                                                            <div onClick={this.handleRevealCollar}>
-                                                                <img className='collar_image_side' src={Collar1} alt='collar' />
-                                                                <p className='tooltiptext'><strong>Ankara <br />Collar</strong></p>
+                                                            <div className="side_ankara"  onClick={this.handleRevealCollar}>
+                                                                {/* <img className='collar_image_side' src={Collar1} alt='collar' /> */}
+                                                                <div className='tooltiptext1'>
+                                                                    <p ><strong>Ankara <br />Collar</strong></p>
+                                                                </div>
                                                             </div>
-                                                            <div onClick={this.handleWhiteCollar}>
-                                                                <img className='collar_image_side2' src={CollarW} alt='collar' />
-                                                                <p className='tooltiptext'><strong>White <br />Collar</strong></p>
+                                                            <div className="side_white" onClick={this.handleWhiteCollar}>
+                                                                {/* <img className='collar_image_side2' src={CollarW} alt='collar' /> */}
+                                                                <div className='tooltiptext1'>
+                                                                    <p ><strong>white <br />Collar</strong></p>
+                                                                </div>
                                                             </div>
                                                             {/* <div>BLAC COLLAR WILL BE HERE</div> */}
                                                         </div> :
                                                         revealShirt ?
                                                             <div className='revealAll'>
-                                                                <div onClick={this.handleReavelShirt}>
-                                                                    <img className='shirt-side' src={Shirt1} alt='shirt' />
-                                                                    <p className='tooltiptext'><strong>Ankara <br />Plackets</strong></p>
+                                                                <div className="side_ankara" onClick={this.handleReavelShirt}>
+                                                                    {/* <img className='shirt-side' src={Shirt1} alt='shirt' /> */}
+                                                                    <div className='tooltiptext1'>
+                                                                    <p ><strong>Ankara <br />Material</strong></p>
+                                                                    </div>
                                                                 </div>
-                                                                <div onClick={this.handleReavelWhiteShirt}>
-                                                                    <img className='shirt-side' src={Shirt3} alt='shirt' />
-                                                                    <p className='tooltiptext'><strong>White <br />Plackets</strong></p>
+                                                                <div className="side_white" onClick={this.handleReavelWhiteShirt}>
+                                                                    {/* <img className='shirt-side' src={Shirt3} alt='shirt' /> */}
+                                                                    <div className='tooltiptext1'>
+                                                                    <p ><strong>White <br />Material</strong></p>
+                                                                    </div>
                                                                 </div>
-                                                                <div onClick={this.handleReavelBlackShirt}>
-                                                                    <img className='shirt-side' src={blackShirt3} alt='shirt' />
-                                                                    <p className='tooltiptext'><strong>Black <br />Plackets</strong></p>
+                                                                <div className="side_black" onClick={this.handleReavelBlackShirt}>
+                                                                    {/* <img className='shirt-side' src={blackShirt3} alt='shirt' /> */}
+                                                                    <div className='tooltiptext1'>
+                                                                    <p ><strong>Black <br />Material</strong></p>
+                                                                    </div>
                                                                 </div>
                                                             </div> :
 
                                                             revealSleeves ?
                                                                 <div className='revealSleeve'>
-                                                                    <div onClick={this.handlReavelSleeves}>
-                                                                        <img className='sleeves-side1' src={Long} alt='shirt' />
-                                                                        <p className='tooltiptext'><strong>Ankara <br />Sleeves</strong></p>
+                                                                    <div className="side_ankara" onClick={this.handlReavelSleeves}>
+                                                                        {/* <img className='sleeves-side1' src={Long} alt='shirt' /> */}
+                                                                        <div className='tooltiptext1'>
+                                                                        <p><strong>Ankara <br />Sleeves</strong></p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div style={{ marginLeft: '20px' }} onClick={this.handlReavelWhiteSleeves}>
-                                                                        <img className='sleeves-side1' src={Long} alt='shirt' />
-                                                                        <p className='tooltiptext'><strong>White <br />Sleeves</strong></p>
+                                                                    <div className="side_white" style={{ marginLeft: '20px' }} onClick={this.handlReavelWhiteSleeves}>
+                                                                        {/* <img className='sleeves-side1' src={Long} alt='shirt' /> */}
+                                                                        <div className='tooltiptext1'>
+                                                                        <p><strong>White <br />Sleeves</strong></p>
+                                                                        </div>
                                                                     </div>
-                                                                    {/* <div>BLACK SLEEVES WILL BE HERE</div> */}
+
+                                                                     <div className="side_black" style={{ marginLeft: '20px' }} onClick={this.handlReavelBlackSleeves}>
+                                                                        {/* <img className='sleeves-side1' src={Long} alt='shirt' /> */}
+                                                                        <div className='tooltiptext1'>
+                                                                        <p><strong>White <br />Sleeves</strong></p>
+                                                                        </div>
+                                                                    </div>
 
                                                                 </div> : null
 
